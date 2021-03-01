@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { MDBView, MDBMask, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput, MDBContainer } from "mdbreact";
+import { MDBView, MDBMask, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput, MDBContainer,    MDBModal,
+    MDBModalHeader,
+    MDBModalBody,
+    MDBModalFooter } from "mdbreact";
 import axios from 'axios';
 import '../App.css'
-
+import {Link,Redirect } from 'react-router-dom'
 
 
 export default class Contact extends Component {
@@ -12,10 +15,18 @@ export default class Contact extends Component {
         email:'',
         phone:'',
         societe:'',
-        message:''
+        message:'',
+            redirect: false,
+          modal: false
     }
 
     //handle inputs 
+
+     toggle = () => {
+  this.setState({
+    modal: !this.state.modal
+  });
+}
     handleName=(e)=>{
         this.setState({
             name:e.target.value
@@ -41,7 +52,16 @@ export default class Contact extends Component {
             message:e.target.value
         })
     }
-
+   setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+ renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/Contact' />
+    }
+  }
     
 
 
@@ -168,10 +188,20 @@ export default class Contact extends Component {
                                                     onChange={this.handleMessage}
                                                     className='white-text'
                                                 />
-                                                <MDBBtn type="submit" rounded color="blue" >
+                                                <MDBBtn type="submit" rounded color="blue" onClick={this.toggle}>
                                                     <MDBIcon  icon="paper-plane" /> Envoyer
                                                 </MDBBtn>
-                                               
+                                               <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+        <MDBModalHeader toggle={this.toggle}>Enregistrement réussi !</MDBModalHeader>
+        <MDBModalBody>
+          Votre message a bien été envoyé . Nous reviendrons vers vous dans les plus brefs délais . Merci pour votre confiance
+        </MDBModalBody>
+        <MDBModalFooter>
+            {this.renderRedirect()}
+          <MDBBtn color="secondary" onClick={this.resetForm}>Close</MDBBtn>
+          
+        </MDBModalFooter>
+      </MDBModal>
                                             </div>
                                         </MDBCol>
                                     </MDBRow>
