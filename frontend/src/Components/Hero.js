@@ -1,29 +1,24 @@
-import React from "react";
+import React from 'react';
+import video from '../Assets/video1.mp4'
+import classes from './BackgroundVideo.module.css';
+import '../App.css'
 
-import "../App.css";
-import banniere from '../Assets/banniere.jpg'
+const BackgroundVideo = () => {
+    return (
+        <div className={classes.Container} >
+            <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
 
-
-class HeaderSection extends React.Component {
-    state = {
-        collapseID: ""
-    };
-
-    toggleCollapse = collapseID => () =>
-        this.setState(prevState => ({
-            collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-        }));
-
-    render() {
-
-        return (
-
-            <div id="videobackground">
-              <img src={banniere} alt='banniere'/>
+            <div className={classes.Content}>
+                <div className={classes.SubContent} >
+                    <h1 id="hero-title">Santé & nature</h1>
+                   
+                </div>
             </div>
-            
-        );
-    }
+        </div>
+    )
 }
 
-export default HeaderSection;
+export default BackgroundVideo
