@@ -5,8 +5,75 @@
 }
 
 
-#hero-title
+#hero-title    
 {
      font-family: 'Tangerine', cursive;
      font-size: 130px;
+}
+
+
+
+#contact-section .view {
+ background: rgb(126,138,255);
+background: linear-gradient(90deg, rgba(126,138,255,1) 0%, rgba(158,255,140,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  height: auto;
+  margin-top: -40px;
+  margin-bottom:-90px;
+}
+
+#contact-section #contact-card
+{
+  margin-top: 50px;
+}
+#contact-section .gradient {
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    45deg,
+    from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+}
+
+#contact-section .card {
+  background-color: rgba(126, 123, 215, 0.2);
+}
+
+#contact-section h6 {
+  line-height: 1.7;
+}
+
+#contact-section .navbar {
+  transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+#contact-section .top-nav-collapse {
+  background: #424f95 !important;
+}
+
+@media (max-width: 768px) {
+  #contact-section .navbar:not(.top-nav-collapse) {
+    background: #424f95 !important;
+  }
+}
+
+#contact-section label {
+  color: #fff !important;
+}
+
+#contact-section .icon
+{
+    color: #fff !important;
 }

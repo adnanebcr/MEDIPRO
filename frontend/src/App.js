@@ -13,7 +13,7 @@ function App() {
   return (
     <Router >
       <Header/>
-      <main className='py-2'>
+      <main className='pb-5'>
        <Route path='/' component={Home} exact/>
        <Route path='/About' component={About} />
        <Route path='/Products' component={Products} />
