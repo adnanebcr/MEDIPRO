@@ -1,0 +1,38 @@
+#headerComponent .App-logo
+{
+     width: 150px;
+     max-height: fit-content;
+}
+
+
+#videobackground  {
+opacity: inherit;
+background-position: 0;
+position: relative;
+margin-top: -30px;
+
+}
+#videobackground img  {
+opacity: inherit;;
+width: 100%;
+}
+
+ #video-intro {
+top: 0!important;
+left: 0!important;
+transform: none!important;
+ min-width: 100%;
+  min-height: 100%;
+  width: 1400px;
+  height: auto;
+  margin-top: -20px;
+  height: auto;
+  z-index: 0;
+  position: relative;
+ 
+}
+
+#Carousel 
+{
+     margin-top: -50px;
+}
