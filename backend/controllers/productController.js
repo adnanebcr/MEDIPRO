@@ -76,24 +76,34 @@ const createProduct = asyncHandler(async (req, res) => {
 const updateProduct = asyncHandler(async (req, res) => {
   const {
     name,
-    price,
-    description,
-    image,
-    brand,
-    category,
-    countInStock,
+        metadesc,
+        image,
+       fiche
+        ,gammes
+        ,description
+        ,proprietes
+        ,conseil
+        ,precautions
+        ,PPH
+        ,PPC
+        ,Colisage
   } = req.body
 
   const product = await Product.findById(req.params.id)
 
   if (product) {
     product.name = name
-    product.price = price
+    product.metadesc = metadesc
     product.description = description
     product.image = image
-    product.brand = brand
-    product.category = category
-    product.countInStock = countInStock
+    product.fiche = fiche
+    product.gammes = gammes
+    product.proprietes = proprietes
+    product.conseil = conseil
+    product.precautions = precautions
+    product.PPH = PPH
+    product.PPC = PPC
+    product.Colisage = Colisage
 
     const updatedProduct = await product.save()
     res.json(updatedProduct)

@@ -16,6 +16,8 @@ import userList from './Pages/userList'
 import UserEditScreen from './Pages/userEdit'
 import Register from './Pages/Register'
 import productList from './Pages/adminProducts'
+import productEditScreen from './Pages/productEditAdmin'
+
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
        <Route path='/admin/userlist' component={userList}/>
         <Route path='/admin/productlist' component={productList}/>
        <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+       <Route path='/admin/product/:id/edit' component={productEditScreen} />
+
        <Route path='/About' component={About} />
        <Route path='/Products' component={Products} />
        <Route path='/Product/:id' component={SingleProduct} />
