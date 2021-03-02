@@ -1,5 +1,4 @@
 import Product from '../models/productModel.js'
-import mediproList1model from '../models/mediproList1model.js'
 import asyncHandler from 'express-async-handler'
 
 
@@ -28,15 +27,7 @@ const getProductsById = asyncHandler(async (req, res) => {
 }) 
 
 
-// @descr   fetch all products 
-// @route   GET /api/products
-// @access Public 
 
-const getList = asyncHandler(async (req,res)=>{
-    const medipro1 = await mediproList1model.find({})
-    
-    res.json(medipro1)
-}) 
 
 
 // @desc    Delete a product
@@ -59,15 +50,20 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
-    name: 'Sample name',
-    price: 0,
-    user: req.user._id,
-    image: '/images/sample.jpg',
-    brand: 'Sample brand',
-    category: 'Sample category',
-    countInStock: 0,
-    numReviews: 0,
-    description: 'Sample description',
+    user :req.user._id,
+      name: 'APIXOL 22®',
+        type:'Solution buvable Adultes',
+        metadesc: 'produits-phares',
+        image: '/products/apixol/ApixolAdsirop.png',
+          fiche:'test1',
+        gammes: 'Gastro-entérologie',
+        description: 'description APIXOL',
+        proprietes: 'Apixol solution buvable est à base d\'extraits de plantes riches en actifs naturels qui agissent en synergie pour désencombrer les bronches en cas de toux grasse et apaiser l’irritation des voies respiratoires en cas de toux sèche tout en renforçant les défenses naturelles de l’organisme',
+        conseil: 'Toux sèche,Toux grasse',
+        precautions: 'cuillère à soupe 3 à 4 fois par jour.',
+        PPH:55.30,
+        PPC:79.00,
+        Colisage:48
   })
 
   const createdProduct = await product.save()
