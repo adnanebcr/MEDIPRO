@@ -34,8 +34,8 @@ useEffect(() => {
                                         src={logo}
                                     /></div>
                      <h3 id='title' className='text-center'>Liste1</h3>
-                       <div className='rgba-black-strong'><Container><h5>&gt;= 400 UN --&gt; 20%   |  &gt;= 300 UN --&gt; 16%   |     &gt;= 180 UN --&gt; 12%</h5></Container></div>
-                    <Table1/>
+                       <div className='rgba-black-strong'><h5>&gt;= 400 UN --&gt; 20%   |  &gt;= 300 UN --&gt; 16%   |     &gt;= 180 UN --&gt; 12%</h5></div>
+                    <Table1 className='text-center'/>
                       <h3 id='title' className='text-center'>Liste2</h3>
                                 <div className='rgba-black-strong'><Container><h5>12% de remise après marché liste 1</h5></Container></div>
 
@@ -48,7 +48,7 @@ useEffect(() => {
                                     /></div>
                      <h3 id='title' className='text-center'>Liste1</h3>
                      <div className='rgba-black-strong'><Container><h5>&gt;= 120 UN --&gt; 20%   |  &gt;= 100 UN --&gt; 16%   |     &gt;= 80 UN --&gt; 12%</h5></Container></div>
-                    <Table3/>
+                    <Table3 className='text-center my-4'/>
                       <h3 id='title' className='text-center'>Liste2</h3>
                 <div className='rgba-black-strong'><Container><h5>12% de remise après marché liste 1</h5></Container></div>
 

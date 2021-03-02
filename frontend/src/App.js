@@ -15,6 +15,7 @@ import FirstPage from './Pages/FirstPage'
 import userList from './Pages/userList'
 import UserEditScreen from './Pages/userEdit'
 import Register from './Pages/Register'
+import productList from './Pages/adminProducts'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
        <Route path='/History' component={Historique}/>
        <Route path='/profile' component={Profile}/>
        <Route path='/admin/userlist' component={userList}/>
+        <Route path='/admin/productlist' component={productList}/>
        <Route path='/admin/user/:id/edit' component={UserEditScreen} />
        <Route path='/About' component={About} />
        <Route path='/Products' component={Products} />

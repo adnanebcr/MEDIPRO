@@ -18,6 +18,9 @@ const productSchema = mongoose.Schema(
         proprietes:{type: String,required: true},
         conseil:{type: String,required: true},
         precautions:{type: String,required: true},
+        PPH: { type: Number, required: true },
+        PPC: { type: Number, required: true },
+        Colisage: { type: Number, required: true },
     }, { timestamps: true }
 )
 
