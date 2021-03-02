@@ -22,6 +22,7 @@ import {
 } from 'mdbreact';
 import '../App.css';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 class ClassicFormPage extends React.Component {
     state = {
@@ -221,7 +222,7 @@ class ClassicFormPage extends React.Component {
                                               </MDBRow>
                                             <div className='text-center mt-4 black-text'> <div>
         
-         <MDBBtn type='submit' color='indigo' onClick={this.toggle}>Créer un compte </MDBBtn>
+         <Button variant="primary" type='submit'  onClick={this.toggle}>Créer un compte </Button>
        </div>
                                                 <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
         <MDBModalHeader toggle={this.toggle}>Enregistrement réussi !</MDBModalHeader>

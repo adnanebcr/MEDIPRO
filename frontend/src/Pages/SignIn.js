@@ -23,6 +23,7 @@ import {
 } from 'mdbreact';
 import '../App.css';
 import { Form } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 
 const SignIn = ({location,history}) => {
@@ -79,12 +80,12 @@ const SignIn = ({location,history}) => {
                                         {loading && <Loader/>}
                                         <hr className='hr-light' />
                                         <Form onSubmit={submitHandler}>
-                                            <MDBInput className="white-text" label="Votre identifiant" icon="envelope" group type="email" validate error="wrong" value={email}
+                                            <MDBInput className="white-text" label="Votre identifiant" group type="email" validate error="wrong" value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
                                                 success="right" />
-                                            <MDBInput className="white-text"  label="Votre mot de passe" icon="lock" group type="password"   validate  value={password} onChange={(e) => setPassword(e.target.value)} />
+                                            <MDBInput className="white-text"  label="Votre mot de passe" group type="password"   validate  value={password} onChange={(e) => setPassword(e.target.value)} />
                                             <div className='text-center mt-4 black-text'>
-                                                <MDBBtn color='indigo' type='submit'>Se connecter </MDBBtn>
+                                                <Button variant="primary" type='submit'>Se connecter </Button>
                                                 
                                                
                                                 <hr className='hr-light' />

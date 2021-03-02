@@ -25,7 +25,8 @@ export default class Contact extends Component {
      toggle = () => {
   this.setState({
     modal: !this.state.modal
-  });
+  })
+  this.resetForm();
 }
     handleName=(e)=>{
         this.setState({
@@ -192,15 +193,11 @@ export default class Contact extends Component {
                                                     <MDBIcon  icon="paper-plane" /> Envoyer
                                                 </MDBBtn>
                                                <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-        <MDBModalHeader toggle={this.toggle}>Enregistrement réussi !</MDBModalHeader>
+        <MDBModalHeader toggle={this.toggle}>Message envoyé !</MDBModalHeader>
         <MDBModalBody>
           Votre message a bien été envoyé . Nous reviendrons vers vous dans les plus brefs délais . Merci pour votre confiance
         </MDBModalBody>
-        <MDBModalFooter>
-            {this.renderRedirect()}
-          <MDBBtn color="secondary" onClick={this.resetForm}>Close</MDBBtn>
-          
-        </MDBModalFooter>
+
       </MDBModal>
                                             </div>
                                         </MDBCol>
