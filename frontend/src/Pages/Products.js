@@ -8,6 +8,8 @@ import C1 from '../Components/Caroussel'
 import '../App.css'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
+import { pathologie } from '../Components/Datas';
+import Checkbox1 from '../Components/checkbox'
 
 
 
@@ -20,6 +22,10 @@ const ProductsPage = () => {
       dispatch(listProducts())
     }, [dispatch])
  
+
+    const handleFilters =()=>{
+      
+    }
     return (
         <div id="Products">
             <C1 id="Carousel"/>
@@ -31,6 +37,8 @@ const ProductsPage = () => {
              <>
          <Row>
              <Col lg='3'>
+               <Checkbox1  list={pathologie}
+                        handleFilters={filters => handleFilters(filters, "pathologie")}/>
              </Col>
              <Col lg='8'>
                  {loading ?<Loader/> :error ? <Message variant ='danger'>{error}</Message> :

@@ -76,7 +76,7 @@ const ProductEditScreen = ({ match, history }) => {
     }
   }, [dispatch, history, productId, product, successUpdate])
 
-  const uploadFileHandler = async (e) => {
+    const uploadFileHandler = async (e) => {
     const file = e.target.files[0]
     const formData = new FormData()
     formData.append('image', file)
@@ -98,6 +98,7 @@ const ProductEditScreen = ({ match, history }) => {
       setUploading(false)
     }
   }
+
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -155,25 +156,25 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='image'>
-              <Form.Label>Image</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Enter image url'
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              ></Form.Control>
-              <Form.File
-                id='image-file'
-                label='Choose File'
-                custom
-                onChange={uploadFileHandler}
-              ></Form.File>
-              {uploading && <Loader />}
-            </Form.Group>
+                       <Form.Group controlId='image'>
+                <Form.Label>Image</Form.Label>
+                <Form.Control
+                  type='text'
+                  placeholder='Enter image url'
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                ></Form.Control>
+                <Form.File
+                  id='image-file'
+                  label='Choose File'
+                  custom
+                  onChange={uploadFileHandler}
+                ></Form.File>
+                {uploading && <Loader />}
+              </Form.Group>
 
             
-            <Form.Group controlId='image'>
+            {/* <Form.Group controlId='Fiche'>
               <Form.Label>Fiche</Form.Label>
               <Form.Control
                 type='text'
@@ -188,7 +189,7 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={uploadFileHandler}
               ></Form.File>
               {uploading && <Loader />}
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group controlId='type'>
               <Form.Label>Gammes</Form.Label>
