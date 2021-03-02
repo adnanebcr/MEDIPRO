@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { MDBView, MDBMask, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput, MDBContainer,    MDBModal,
     MDBModalHeader,
     MDBModalBody,
-    MDBModalFooter } from "mdbreact";
+     } from "mdbreact";
 import axios from 'axios';
 import '../App.css'
-import {Link,Redirect } from 'react-router-dom'
+import {Redirect } from 'react-router-dom'
 
 
 export default class Contact extends Component {

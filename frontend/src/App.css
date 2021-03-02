@@ -1,3 +1,5 @@
+ /* Navbar Section */
+
 #headerComponent .App-logo
 {
      width: 150px;
@@ -5,13 +7,31 @@
 }
 
 
+
+ /* Hero Section */
+
 #hero-title    
 {
      font-family: 'Tangerine', cursive;
      font-size: 130px;
+
 }
 
 
+
+ /* About Section */
+
+#banniere
+{
+  width: 100%;
+}
+
+#About h1
+{
+
+}
+
+ /* Contact Section */
 
 #contact-section .view {
  background: rgb(126,138,255);
@@ -76,4 +96,29 @@ background: linear-gradient(90deg, rgba(126,138,255,1) 0%, rgba(158,255,140,1) 1
 #contact-section .icon
 {
     color: #fff !important;
+}
+
+/*Commande section*/
+#Commande .App-logo
+{
+  width: 200px;
+}
+
+/*Table Section */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
 }

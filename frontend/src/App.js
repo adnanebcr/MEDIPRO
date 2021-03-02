@@ -8,6 +8,11 @@ import SingleProduct from './Pages/SingleProduct'
 import Contact from './Pages/Contact'
 import SignIn from './Pages/SignIn'
 import SignUp from './Pages/SignUp'
+import Commande from './Pages/Commande'
+import Profile from './Pages/profile'
+import Historique from './Pages/Historique'
+import FirstPage from './Pages/FirstPage'
+
 
 function App() {
   return (
@@ -15,6 +20,10 @@ function App() {
       <Header/>
       <main className='pb-5'>
        <Route path='/' component={Home} exact/>
+       <Route path='/Commande' component={Commande}/>
+       <Route path='/FirstPage' component={FirstPage}/>
+       <Route path='/History' component={Historique}/>
+       <Route path='/profile' component={Profile}/>
        <Route path='/About' component={About} />
        <Route path='/Products' component={Products} />
        <Route path='/Product/:id' component={SingleProduct} />

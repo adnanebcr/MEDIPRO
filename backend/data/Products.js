@@ -1,18 +1,5 @@
 const Products = [
     {
-         name:'DEPURATTIVA',
-        type: 'Solution Buvable',
-        metadesc:'produits-phares',
-        image:'/products/apixol/ApixolAdsirop.png',
-        fiche:'test122',
-        gammes:'testgamme1',
-        description:'desc1',
-        proprietes:'prop1',
-        conseil:'cons1',
-        precautions:'prec1',
-    },
-    
-    {
         name: 'APIXOL ®',
         type:'Solution buvable Adultes',
         metadesc: 'produits-phares',

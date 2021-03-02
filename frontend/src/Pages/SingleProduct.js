@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import {useDispatch,useSelector} from 'react-redux'
-import {Row,Col,Image,ListGroup,Breadcrumb,Container,Card,Button} from 'react-bootstrap'
+import {Row,Col,Image,ListGroup,Breadcrumb,Container,Card} from 'react-bootstrap'
 import {listProductDetails} from '../Actions/productActions'
-import Message from '../Components/Message'
-import Loader from '../Components/Loader'
+
 import { Tab } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 
@@ -12,7 +11,7 @@ const SingleProduct = ({ match }) => {
     const dispatch =useDispatch()
 
     const productDetails = useSelector(state => state.productDetails)
-    const {loading,error,product}= productDetails
+    const {product}= productDetails
   
 
   
@@ -36,7 +35,7 @@ const SingleProduct = ({ match }) => {
               <Card>
                 <Row>
                   <Col md={7}><Image src={product.image} alt={product.name} fluid /></Col>
-                   <Col md={5} className='text-center my-3'>
+                   <Col md={5} className='text-left my-3'>
               <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <h3>{product.name}</h3>

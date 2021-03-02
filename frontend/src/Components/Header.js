@@ -22,13 +22,13 @@ const Header = () => {
     return (
         <header id="headerComponent">
                                                 {userInfo ? (   <Navbar bg="primary" variant="dark" expand="lg">
-  <Container fluid> <LinkContainer to ='/'><Navbar.Brand > <img className="App-logo" alt="..." src={logo}/></Navbar.Brand>
-      </LinkContainer>
+ <Navbar.Brand > <img className="App-logo" alt="..." src={logo}/></Navbar.Brand>
+    
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
-        <LinkContainer to="/About"><Nav.Link >Passer une commande</Nav.Link></LinkContainer>
-        <LinkContainer to="/Products"><Nav.Link >Consulter vos commandes</Nav.Link></LinkContainer>
+        <LinkContainer to="/Commande"><Nav.Link >Passer une commande</Nav.Link></LinkContainer>
+        <LinkContainer to="/History"><Nav.Link >Consulter vos commandes</Nav.Link></LinkContainer>
 
      <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
        <LinkContainer to ="/profile"><NavDropdown.Item > Consulter le profil</NavDropdown.Item></LinkContainer> 
@@ -38,7 +38,7 @@ const Header = () => {
       </NavDropdown>
     </Nav>
 
-  </Navbar.Collapse></Container>
+  </Navbar.Collapse>
 </Navbar>):   <Navbar bg="primary" variant="dark" expand="lg">
   <Container fluid> <LinkContainer to ='/'><Navbar.Brand > <img className="App-logo" alt="..." src={logo}/></Navbar.Brand>
       </LinkContainer>
