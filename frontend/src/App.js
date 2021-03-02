@@ -14,6 +14,7 @@ import Historique from './Pages/Historique'
 import FirstPage from './Pages/FirstPage'
 import userList from './Pages/userList'
 import UserEditScreen from './Pages/userEdit'
+import Register from './Pages/Register'
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
       <main className='pb-5'>
        <Route path='/' component={Home} exact/>
        <Route path='/Commande' component={Commande}/>
+              <Route path='/Register' component={Register}/>
+
        <Route path='/FirstPage' component={FirstPage}/>
        <Route path='/History' component={Historique}/>
        <Route path='/profile' component={Profile}/>

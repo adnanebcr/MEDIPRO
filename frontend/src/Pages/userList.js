@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import { listUsers, deleteUser } from '../Actions/userActions'
+import { Link } from 'react-router-dom'
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch()
@@ -36,7 +37,8 @@ const UserListScreen = ({ history }) => {
 
   return (
     <>
-      <h1>Users</h1>
+      <h1>Utilisateurs:</h1>
+      <Link to='/Register'><Button>Ajouter un utilisateur</Button></Link>
       {loading ? (
         <Loader />
       ) : error ? (
