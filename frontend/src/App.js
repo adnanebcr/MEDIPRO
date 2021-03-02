@@ -12,6 +12,8 @@ import Commande from './Pages/Commande'
 import Profile from './Pages/profile'
 import Historique from './Pages/Historique'
 import FirstPage from './Pages/FirstPage'
+import userList from './Pages/userList'
+import UserEditScreen from './Pages/userEdit'
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
        <Route path='/FirstPage' component={FirstPage}/>
        <Route path='/History' component={Historique}/>
        <Route path='/profile' component={Profile}/>
+       <Route path='/admin/userlist' component={userList}/>
+       <Route path='/admin/user/:id/edit' component={UserEditScreen} />
        <Route path='/About' component={About} />
        <Route path='/Products' component={Products} />
        <Route path='/Product/:id' component={SingleProduct} />

@@ -4,7 +4,6 @@ import { logout } from '../Actions/userActions'
 import logo from '../Assets/logo-medipro.png';
 import {  NavDropdown,Nav,Navbar } from 'react-bootstrap'
 import '../App.css'
-import { Container } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap'
 
 
@@ -14,6 +13,7 @@ const Header = () => {
    const dispatch = useDispatch()
     const userlogin = useSelector(state => state.userlogin)
     const {userInfo}=userlogin
+    console.log('header',userlogin)
      const logoutHandler = () => {
     dispatch(logout())
   }
@@ -21,11 +21,12 @@ const Header = () => {
 
     return (
         <header id="headerComponent">
-                                                {userInfo ? (   <Navbar bg="primary" variant="dark" expand="lg">
+           <Navbar bg="primary" variant="dark" expand="lg">
  <Navbar.Brand > <img className="App-logo" alt="..." src={logo}/></Navbar.Brand>
     
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
+                                                {userInfo ? (  
     <Nav className="ml-auto">
         <LinkContainer to="/Commande"><Nav.Link >Passer une commande</Nav.Link></LinkContainer>
         <LinkContainer to="/History"><Nav.Link >Consulter vos commandes</Nav.Link></LinkContainer>
@@ -38,12 +39,8 @@ const Header = () => {
       </NavDropdown>
     </Nav>
 
-  </Navbar.Collapse>
-</Navbar>):   <Navbar bg="primary" variant="dark" expand="lg">
-  <Container fluid> <LinkContainer to ='/'><Navbar.Brand > <img className="App-logo" alt="..." src={logo}/></Navbar.Brand>
-      </LinkContainer>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
+
+):  
     <Nav className="ml-auto">
         <LinkContainer to="/About"><Nav.Link >à propos de nous</Nav.Link></LinkContainer>
         <LinkContainer to="/Products"><Nav.Link >Nos produits</Nav.Link></LinkContainer>
@@ -56,8 +53,22 @@ const Header = () => {
       </NavDropdown>
     </Nav>
 
-  </Navbar.Collapse></Container>
-</Navbar>}
+  
+}
+  {userInfo && userInfo.isAdmin && (
+                <NavDropdown title='Admin' id='adminmenu'>
+                  <LinkContainer to='/admin/userlist'>
+                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/productlist'>
+                    <NavDropdown.Item>Products</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/orderlist'>
+                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+              )}
+              </Navbar.Collapse></Navbar>
         </header>
     )
 }
