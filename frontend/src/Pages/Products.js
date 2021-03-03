@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
 import {useDispatch,useSelector} from 'react-redux'
 import  {listProducts} from '../Actions/productActions'
 import { Col } from 'react-bootstrap'
@@ -10,21 +10,38 @@ import Message from '../Components/Message'
 import Loader from '../Components/Loader'
 import { pathologie } from '../Components/Datas';
 import Checkbox1 from '../Components/checkbox'
+import SearchBox from "../Components/Searchbox";
+import {Route} from 'react-router-dom'
 
 
 
 
-const ProductsPage = () => {
+const ProductsPage = ({match}) => {
   const dispatch = useDispatch()
     const productList= useSelector(state=>state.productList)
     const {loading , error ,products}=productList
+    const keyword = match.params.keyword
     useEffect(() => {
-      dispatch(listProducts())
-    }, [dispatch])
+      dispatch(listProducts(keyword))
+    }, [dispatch,keyword])
  
+    
+    const [filters,setFilters]=useState({
+      pathologie:[],
+    })
 
-    const handleFilters =()=>{
-      
+    const showFilteredResults=(filters)=>{
+        const variables = {
+            filters: filters
+        }
+        listProducts(variables)
+    }
+
+    const handleFilters =(filters,category)=>{
+      console.log(filters)
+      const newFilters = {...filters}
+      newFilters[category] = filters
+      showFilteredResults(newFilters)
     }
     return (
         <div id="Products">
@@ -37,6 +54,7 @@ const ProductsPage = () => {
              <>
          <Row>
              <Col lg='3'>
+               <Route render={({ history }) => <SearchBox history={history} />} />
                <Checkbox1  list={pathologie}
                         handleFilters={filters => handleFilters(filters, "pathologie")}/>
              </Col>

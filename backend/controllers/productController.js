@@ -8,8 +8,17 @@ import asyncHandler from 'express-async-handler'
 // @access Public 
 
 const getProducts = asyncHandler(async (req,res)=>{
-    const products = await Product.find({})
+      const keyword = req.query.keyword
+    ? {
+        name: {
+          $regex: req.query.keyword,
+          $options: 'i',
+        },
+        
+      }
+    : {}
     
+    const products = await Product.find({ ...keyword })
     res.json(products)
 }) 
 
@@ -130,7 +139,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 // @route   GET /api/products/top
 // @access  Public
 const getTopProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({}).sort({ rating: -1 }).limit(3)
+  const products = await Product.find({metadesc:'produits-phares'}).limit(5)
 
   res.json(products)
 })
