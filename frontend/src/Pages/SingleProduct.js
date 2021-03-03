@@ -87,7 +87,13 @@ const SingleProduct = ({ match }) => {
 
                     <Tab.Pane eventKey="Precautions">
                     <h2 className="green-text text-left product-title">Précautions :</h2>
-                    <p>{product.precautions}</p>                     
+                    
+                     <p>{product.precautions1}</p>
+                     
+                      <p>{product.precautions2}</p>
+                    
+                      <p>{product.precautions3}</p>
+                                        
                     </Tab.Pane>
 
                   </Tab.Content>

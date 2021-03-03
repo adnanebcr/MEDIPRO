@@ -5,12 +5,12 @@ const router = express.Router()
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, '.uploads/')
+    cb(null, 'frontend/public/uploads')
   },
   filename(req, file, cb) {
     cb(
       null,
-      `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
+      `${file.originalname}`
     )
   },
 })
@@ -31,12 +31,16 @@ const upload = multer({
   storage,
   fileFilter: function (req, file, cb) {
     checkFileType(file, cb)
+  
+
   },
 })
 
 router.post('/', upload.single('image'), (req, res) => {
+  const path2 = `/uploads/${req.file.originalname}`
+  console.log(path2)
   res.send(`/${req.file.path}`)
-  console.log(req.file.path)
+  
 })
 
 export default router

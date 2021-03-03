@@ -2,6 +2,7 @@ import Product from '../models/productModel.js'
 import asyncHandler from 'express-async-handler'
 
 
+
 // @descr   fetch all products 
 // @route   GET /api/products
 // @access Public 
@@ -11,6 +12,9 @@ const getProducts = asyncHandler(async (req,res)=>{
     
     res.json(products)
 }) 
+
+
+
 
 // @descr   fetch single product 
 // @route   GET /api/products/:id
@@ -53,6 +57,7 @@ const createProduct = asyncHandler(async (req, res) => {
     user :req.user._id,
       name: 'APIXOL 22®',
         type:'Solution buvable Adultes',
+        liste:'medipro liste 1',
         metadesc: 'produits-phares',
         image: '/products/apixol/ApixolAdsirop.png',
           fiche:'test1',
@@ -60,10 +65,9 @@ const createProduct = asyncHandler(async (req, res) => {
         description: 'description APIXOL',
         proprietes: 'Apixol solution buvable est à base d\'extraits de plantes riches en actifs naturels qui agissent en synergie pour désencombrer les bronches en cas de toux grasse et apaiser l’irritation des voies respiratoires en cas de toux sèche tout en renforçant les défenses naturelles de l’organisme',
         conseil: 'Toux sèche,Toux grasse',
-        precautions: 'cuillère à soupe 3 à 4 fois par jour.',
-        PPH:55.30,
-        PPC:79.00,
-        Colisage:48
+        precautions1: 'cuillère à soupe 3 à 4 fois par jour.',
+         precautions2: 'cuillère à soupe 3 à 4 fois par jour.',
+          precautions3: 'cuillère à soupe 3 à 4 fois par jour.',
   })
 
   const createdProduct = await product.save()
@@ -78,12 +82,16 @@ const updateProduct = asyncHandler(async (req, res) => {
     name,
         metadesc,
         image,
-       fiche
+        type,
+       fiche,
+       liste
         ,gammes
         ,description
         ,proprietes
         ,conseil
-        ,precautions
+        ,precautions1
+        ,precautions2
+        ,precautions3
         ,PPH
         ,PPC
         ,Colisage
@@ -93,6 +101,8 @@ const updateProduct = asyncHandler(async (req, res) => {
 
   if (product) {
     product.name = name
+    product.type=type
+    product.liste=liste
     product.metadesc = metadesc
     product.description = description
     product.image = image
@@ -100,7 +110,9 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.gammes = gammes
     product.proprietes = proprietes
     product.conseil = conseil
-    product.precautions = precautions
+    product.precautions1 = precautions1
+    product.precautions2 = precautions2
+    product.precautions3 = precautions3
     product.PPH = PPH
     product.PPC = PPC
     product.Colisage = Colisage
@@ -132,6 +144,7 @@ export {
   createProduct,
   updateProduct,
   getTopProducts,
+
 }
 
 

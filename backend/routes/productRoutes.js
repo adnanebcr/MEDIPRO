@@ -2,7 +2,7 @@ import express from 'express'
 import {getProducts,getProductsById, deleteProduct,
   createProduct,
   updateProduct,
-  getTopProducts,} from '../controllers/productController.js'
+  getTopProducts} from '../controllers/productController.js'
   import {protect,admin} from '../middleware/authMiddleware.js'
 
 
@@ -15,6 +15,8 @@ const router=express.Router()
 // @route   GET /api/products
 // @access Public 
 router.route('/').get(getProducts)
+
+
 
 
 // @descr   fetch single product 

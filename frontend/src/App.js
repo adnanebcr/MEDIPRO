@@ -17,6 +17,8 @@ import UserEditScreen from './Pages/userEdit'
 import Register from './Pages/Register'
 import productList from './Pages/adminProducts'
 import productEditScreen from './Pages/productEditAdmin'
+import Fiches from './Pages/Fiches'
+import SingleFiche from './Pages/SingleFiche'
 
 
 
@@ -36,7 +38,8 @@ function App() {
         <Route path='/admin/productlist' component={productList}/>
        <Route path='/admin/user/:id/edit' component={UserEditScreen} />
        <Route path='/admin/product/:id/edit' component={productEditScreen} />
-
+       <Route path='/Fiches' component={Fiches}/>
+       <Route path='/SingleFiche/:id' component={SingleFiche}/>
        <Route path='/About' component={About} />
        <Route path='/Products' component={Products} />
        <Route path='/Product/:id' component={SingleProduct} />

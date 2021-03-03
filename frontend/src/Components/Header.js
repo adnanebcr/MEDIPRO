@@ -30,6 +30,7 @@ const Header = () => {
     <Nav className="ml-auto">
         <LinkContainer to="/Commande"><Nav.Link >Passer une commande</Nav.Link></LinkContainer>
         <LinkContainer to="/History"><Nav.Link >Consulter vos commandes</Nav.Link></LinkContainer>
+        <LinkContainer to="/Fiches"><Nav.Link >Fiches Pharmaceutiques</Nav.Link></LinkContainer>
 
      <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
        <LinkContainer to ="/profile"><NavDropdown.Item > Consulter le profil</NavDropdown.Item></LinkContainer> 

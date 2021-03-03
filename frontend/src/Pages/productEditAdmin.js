@@ -13,14 +13,18 @@ const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
 
   const [name, setName] = useState('')
-  const [metadesc, setMetadesc] = useState(0)
+   const [type, setType] = useState('')
+  const [metadesc, setMetadesc] = useState('')
+   const [liste, setListe] = useState('')
   const [image, setImage] = useState('')
   const [fiche, setFiche] = useState('')
   const [gammes, setGammes] = useState('')
   const [description, setDescription] = useState('')
   const [proprietes, setProprietes] = useState('')
   const [conseil, setConseil] = useState('')
-  const [precautions, setPrecautions] = useState('')
+  const [precautions1, setPrecautions1] = useState('')
+  const [precautions2, setPrecautions2] = useState('')
+  const [precautions3, setPrecautions3] = useState('')
   const [PPH, setPPH] = useState(0)
   const [PPC, setPPC] = useState(0)
   const [Colisage, setColisage] = useState(0)
@@ -61,14 +65,18 @@ const ProductEditScreen = ({ match, history }) => {
         dispatch(listProductDetails(productId))
       } else {
         setName(product.name)
+        setType(product.type)
         setMetadesc(product.metadesc)
+        setListe(product.liste)
         setImage(product.image)
         setFiche(product.fiche)
         setGammes(product.gammes)
         setDescription(product.description)
         setProprietes(product.proprietes)
         setConseil(product.conseil)
-        setPrecautions(product.precautions)
+        setPrecautions1(product.precautions1)
+        setPrecautions2(product.precautions2)
+        setPrecautions3(product.precautions3)
         setPPH(product.PPH)
         setPPC(product.PPC)
         setColisage(product.Colisage)
@@ -106,14 +114,18 @@ const ProductEditScreen = ({ match, history }) => {
       updateProduct({
         _id: productId,
         name,
+        type,
         metadesc,
         image,
-       fiche
+       fiche,
+       liste
         ,gammes
         ,description
         ,proprietes
         ,conseil
-        ,precautions
+        ,precautions1
+        ,precautions2
+        ,precautions3
         ,PPH
         ,PPC
         ,Colisage
@@ -126,6 +138,7 @@ const ProductEditScreen = ({ match, history }) => {
       <Link to='/admin/productlist' className='btn btn-light my-3'>
         Retour
       </Link>
+   
       <FormContainer>
         <h1>Modifier Produit</h1>
         {loadingUpdate && <Loader />}
@@ -146,10 +159,30 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
+               <Form.Group controlId='type'>
+              <Form.Label>Type</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter type'
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='type'>
+              <Form.Label>Liste</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter liste'
+                value={liste}
+                onChange={(e) => setListe(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
             <Form.Group controlId='metadesc'>
               <Form.Label>metadesc</Form.Label>
               <Form.Control
-                type='textS'
+                type='text'
                 placeholder='Enter metadesc'
                 value={metadesc}
                 onChange={(e) => setMetadesc(e.target.value)}
@@ -174,7 +207,7 @@ const ProductEditScreen = ({ match, history }) => {
               </Form.Group>
 
             
-            {/* <Form.Group controlId='Fiche'>
+            <Form.Group controlId='Fiche'>
               <Form.Label>Fiche</Form.Label>
               <Form.Control
                 type='text'
@@ -189,7 +222,7 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={uploadFileHandler}
               ></Form.File>
               {uploading && <Loader />}
-            </Form.Group> */}
+            </Form.Group>
 
             <Form.Group controlId='type'>
               <Form.Label>Gammes</Form.Label>
@@ -234,12 +267,30 @@ const ProductEditScreen = ({ match, history }) => {
 
 
             <Form.Group controlId='type'>
-              <Form.Label>Précautions</Form.Label>
+              <Form.Label>Précautions Adultes</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Enter precautions'
-                value={precautions}
-                onChange={(e) => setPrecautions(e.target.value)}
+                value={precautions1}
+                onChange={(e) => setPrecautions1(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group controlId='type'>
+              <Form.Label>Précautions Enfants1</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter precautions'
+                value={precautions2}
+                onChange={(e) => setPrecautions2(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group controlId='type'>
+              <Form.Label>Précautions Enfants2</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter precautions'
+                value={precautions3}
+                onChange={(e) => setPrecautions3(e.target.value)}
               ></Form.Control>
             </Form.Group>
 

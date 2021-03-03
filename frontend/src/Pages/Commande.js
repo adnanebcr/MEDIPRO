@@ -9,6 +9,8 @@ import { Row ,Col, Container} from 'react-bootstrap'
 import logo from '../Assets/logo-medipro2.png';
 import '../App.css'
 import logo2 from '../Assets/logo-terapharm.png';
+import { Card } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 
 const Commande =  ({history}) => {
@@ -33,12 +35,8 @@ useEffect(() => {
                                         alt="..."
                                         src={logo}
                                     /></div>
-                     <h3 id='title' className='text-center'>Liste1</h3>
-                       <div className='rgba-black-strong'><h5>&gt;= 400 UN --&gt; 20%   |  &gt;= 300 UN --&gt; 16%   |     &gt;= 180 UN --&gt; 12%</h5></div>
-                    <Table1 className='text-center'/>
-                      <h3 id='title' className='text-center'>Liste2</h3>
-                                <div className='rgba-black-strong'><Container><h5>12% de remise après marché liste 1</h5></Container></div>
-
+                    
+                    <Table1/>
                     <Table2/>
                     </Col>
                     <Col xl={6} lg={6} md={12} sm={12} className='text-center'>
@@ -46,13 +44,18 @@ useEffect(() => {
                                         alt="..."
                                         src={logo2}
                                     /></div>
-                     <h3 id='title' className='text-center'>Liste1</h3>
-                     <div className='rgba-black-strong'><Container><h5>&gt;= 120 UN --&gt; 20%   |  &gt;= 100 UN --&gt; 16%   |     &gt;= 80 UN --&gt; 12%</h5></Container></div>
-                    <Table3 className='text-center my-4'/>
-                      <h3 id='title' className='text-center'>Liste2</h3>
-                <div className='rgba-black-strong'><Container><h5>12% de remise après marché liste 1</h5></Container></div>
 
+                    <Table3/>
                     <Table4/>
+                    <Card className='my-3 text-left'>
+                      <h5>Nom : <input disabled value={userInfo.name}></input></h5>
+                      <h5>Adresse :<input disabled value={userInfo.adress}></input></h5>
+                      <h5>Telephone :<input disabled value={userInfo.phone}></input></h5>
+                      <h5>ICE :<input disabled value ={userInfo.ice}></input> </h5>
+ <Button variant='primary' className='btn-lg'>
+                      Valider la commande
+                    </Button>                    
+                    </Card>
                     </Col>
             </Row>
             </Container>
