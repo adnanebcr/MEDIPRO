@@ -24,8 +24,8 @@ const SingleProduct = ({ match }) => {
         <div>
             <Breadcrumb>
   <Breadcrumb.Item href="/">Accueil</Breadcrumb.Item>
-  <Breadcrumb.Item href="/Products/">
-    Produits
+  <Breadcrumb.Item href="/Fiches/">
+    Fiches pharmaceutiques
   </Breadcrumb.Item>
   <Breadcrumb.Item active>{product.name}</Breadcrumb.Item>
 </Breadcrumb>

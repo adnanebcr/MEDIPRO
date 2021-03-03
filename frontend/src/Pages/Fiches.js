@@ -43,7 +43,6 @@ const ProductsPage = ({history}) => {
     
     return (
         <div id="Fiches">
-            <C1 id="Carousel"/>
             <h2 className="h1-responsive font-weight-bold text-center my-5">
 
                     Fiches Pharmaceutiques
@@ -63,7 +62,7 @@ const ProductsPage = ({history}) => {
           <tbody>
             {products.map((product) => (
               <tr key={product._id}>
-                <td><img src={product.image}></img></td>
+                <td><img src={product.image} alt={product.name}></img></td>
                 <td>{product.name} /{product.type}</td>
                 <td>{product.gammes}</td>
              

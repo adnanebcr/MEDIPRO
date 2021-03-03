@@ -89,9 +89,8 @@ const ProductList = ({ history,match }) => {
               <th>type</th>
               
               <th>Gammes</th>
-              <th>PPH</th>
-              <th>PPC</th>
-              <th>Colisage</th>
+              <th>Liste</th>
+
               <th></th>
             </tr>
           </thead>
@@ -107,14 +106,9 @@ const ProductList = ({ history,match }) => {
                  {product.gammes}
                 </td>
                 <td>
-                 {product.PPH}
+                 {product.liste}
                 </td>
-                <td>
-                 {product.PPC}
-                </td>
-                <td>
-                 {product.Colisage}
-                </td>
+              
                 <td>
                   <LinkContainer to={`/admin/product/${product._id}/edit`}>
                     <Button variant='light' className='btn-sm'>

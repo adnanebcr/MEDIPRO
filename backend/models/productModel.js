@@ -10,7 +10,7 @@ const productSchema = mongoose.Schema(
         },
         name:{type: String , required: true},
         type: { type: String, required: true },
-        liste:{ type: String, required: true },
+        liste:{ type: String },
         metadesc:{ type: String, required: true },
         image:{type: String,required: true},
         fiche:{type: String},
@@ -21,9 +21,7 @@ const productSchema = mongoose.Schema(
         precautions1:{type: String,required: true},
         precautions2:{type: String},
         precautions3:{type: String},
-        PPH: { type: Number, required: true },
-        PPC: { type: Number, required: true },
-        Colisage: { type: Number, required: true },
+
     }, { timestamps: true }
 )
 

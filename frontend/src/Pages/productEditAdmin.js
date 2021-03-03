@@ -25,9 +25,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [precautions1, setPrecautions1] = useState('')
   const [precautions2, setPrecautions2] = useState('')
   const [precautions3, setPrecautions3] = useState('')
-  const [PPH, setPPH] = useState(0)
-  const [PPC, setPPC] = useState(0)
-  const [Colisage, setColisage] = useState(0)
+
   const [uploading, setUploading] = useState(false)
 
 //    name: 'APIXOL 22®',
@@ -77,9 +75,7 @@ const ProductEditScreen = ({ match, history }) => {
         setPrecautions1(product.precautions1)
         setPrecautions2(product.precautions2)
         setPrecautions3(product.precautions3)
-        setPPH(product.PPH)
-        setPPC(product.PPC)
-        setColisage(product.Colisage)
+
       }
     }
   }, [dispatch, history, productId, product, successUpdate])
@@ -126,9 +122,7 @@ const ProductEditScreen = ({ match, history }) => {
         ,precautions1
         ,precautions2
         ,precautions3
-        ,PPH
-        ,PPC
-        ,Colisage
+
       })
     )
   }
@@ -294,35 +288,7 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='PPH'>
-              <Form.Label>PPH</Form.Label>
-              <Form.Control
-                type='number'
-                placeholder='Enter PPH'
-                value={PPH}
-                onChange={(e) => setPPH(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId='PPC'>
-              <Form.Label>PPC</Form.Label>
-              <Form.Control
-                type='number'
-                placeholder='Enter PPC'
-                value={PPC}
-                onChange={(e) => setPPC(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId='Colisage'>
-              <Form.Label>Colisage</Form.Label>
-              <Form.Control
-                type='number'
-                placeholder='Enter Colisage'
-                value={Colisage}
-                onChange={(e) => setColisage(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+            
 
         
 
