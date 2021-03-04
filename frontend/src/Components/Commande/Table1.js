@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import {useDispatch,useSelector} from 'react-redux'
 import  {listProducts1} from '../../Actions/listActions'
 import '../../App.css'
@@ -9,13 +9,18 @@ import { Table } from "react-bootstrap";
 
 
 
-const ProductsPage = () => {
+const ProductsPage = (history,match) => {
+  const [qty, setQty] = useState(0)
   const dispatch = useDispatch()
     const productList1= useSelector(state=>state.commandList1)
     const {products}=productList1
     useEffect(() => {
       dispatch(listProducts1())
     }, [dispatch])
+
+        const addToCartHandler = (index) => {
+    console.log(index)
+  }
  
 
     return (
@@ -56,11 +61,11 @@ const ProductsPage = () => {
                  {product.Colisage}
                 </td>
                 <td>
-                 <input type='Number'></input>
+                 <input type='Number' value={qty} onChange={(e) => setQty(e.target.value)}></input>
                 </td>
                 <td>
                   
-                    <Button variant='primary' className='btn-sm'>
+                    <Button variant='primary' className='btn-sm' onClick={(e)=>addToCartHandler(product.designation,product.PPH,product.QTY)}>
                       Valider
                     </Button>
                   

@@ -9,9 +9,15 @@ import {NotFound,ErrorHandler} from './middleware/errorMiddleware.js'
 import nodemailer from 'nodemailer'
 import bodyParser from 'body-parser';
 import path from 'path'
+import morgan from 'morgan'
 
 dotenv.config()
 const app =express();
+
+if(process.env.NODE_ENV==='development')
+{
+    app.use(morgan('dev'))
+}
 
 connectDB()
 

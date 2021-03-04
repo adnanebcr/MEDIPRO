@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux'
+import { useSelector,useState } from 'react-redux'
 import React, {  useEffect } from 'react'
 import Table1 from '../Components/Commande/Table1'
 import Table2 from '../Components/Commande/Table2'
@@ -16,7 +16,7 @@ import { Button } from 'react-bootstrap'
 const Commande =  ({history}) => {
 
    
-
+  
 
   const userLogin = useSelector((state) => state.userlogin)
   const { userInfo } = userLogin
@@ -25,6 +25,7 @@ useEffect(() => {
       history.push('/Signin')
     }
   })
+
     return (
         <section id ='Commande'>
             <h1 className='text-center'>Passer votre commande</h1>
