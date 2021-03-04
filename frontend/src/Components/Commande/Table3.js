@@ -4,6 +4,8 @@ import  {listProducts3} from '../../Actions/listActions'
 import '../../App.css'
 import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
+import TableTest from './TableTest'
+
 
 
 
@@ -42,31 +44,8 @@ const ProductsPage = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
-              <tr key={product._id}>
-                <td>{product.designation}</td>
-                <td>
-                 {product.PPH}
-                </td>
-                <td>
-                 {product.PPC}
-                </td>
-                <td>
-                 {product.Colisage}
-                </td>
-                <td>
-                 <input type='Number'></input>
-                </td>
-                <td>
-                
-                    <Button variant='primary' className='btn-sm'>
-                      Valider
-                    </Button>
-                
-                 
-                  
-                </td>
-              </tr>
+{products.map((product) => (
+              <TableTest product ={product}/>
             ))}
           </tbody>
         </Table>

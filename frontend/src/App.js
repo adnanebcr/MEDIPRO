@@ -19,6 +19,7 @@ import productList from './Pages/adminProducts'
 import productEditScreen from './Pages/productEditAdmin'
 import Fiches from './Pages/Fiches'
 import SingleFiche from './Pages/SingleFiche'
+import PageTest from './Pages/PAgeTest'
 
 
 
@@ -45,6 +46,7 @@ function App() {
        <Route path='/search/:keyword' component={Products} exact />
        <Route path='/Product/:id' component={SingleProduct} />
        <Route path='/Contact' component={Contact} />
+       <Route path='/Test' component={PageTest} />
        <Route path='/SignIn' component={SignIn} />
        <Route path='/SignUp' component={SignUp} />
 
