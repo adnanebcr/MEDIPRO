@@ -39,10 +39,11 @@ const SingleProduct = ({ match }) => {
               <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
+                  <p>{product.liste}</p>
                 </ListGroup.Item>
-                <ListGroup.Item>Gamme : {product.gammes}</ListGroup.Item>
+                <ListGroup.Item><strong>{product.gammes}</strong></ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                   {product.description}
                 </ListGroup.Item>
               </ListGroup>
               </Col>
@@ -76,17 +77,17 @@ const SingleProduct = ({ match }) => {
                   <Tab.Content>
 
                     <Tab.Pane eventKey="Proprietes">
-                    <h2 className="green-text text-left product-title">Propriétés :</h2>
+                    <h5 className="green-text text-left product-title"><strong>Propriétés :</strong></h5>
                       <p>{product.proprietes}</p>
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="Conseil">
-                    <h2 className="green-text text-left product-title">Conseils d'utilisation :</h2>
+                    <h5 className="green-text text-left product-title"><strong>Conseils d'utilisation :</strong></h5>
                     <p>{product.conseil}</p>                    
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="Precautions">
-                    <h2 className="green-text text-left product-title">Précautions :</h2>
+                    <h5 className="green-text text-left product-title"><strong>Précautions :</strong></h5>
                     
                      <p>{product.precautions1}</p>
                      

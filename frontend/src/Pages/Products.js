@@ -53,7 +53,7 @@ const ProductsPage = ({match}) => {
 
              <>
          <Row>
-             <Col lg='3'>
+             <Col lg='3' className='shadow p-3 mb-5 bg-white rounded"'>
                <Route render={({ history }) => <SearchBox history={history} />} />
                <Checkbox1  list={pathologie}
                         handleFilters={filters => handleFilters(filters, "pathologie")}/>

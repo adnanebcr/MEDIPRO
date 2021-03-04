@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap'
 const Product = ({ product }) => {
  
   return (
-    <Card className='my-3 p-3 rounded'>
+    <Card className=' shadow p-3 mb-5 bg-white my-3 p-3 rounded'>
       <Link to={`/Product/${product._id}`}>
         
         <Card.Img src={product.image} variant='top' />
