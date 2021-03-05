@@ -21,6 +21,7 @@ import Fiches from './Pages/Fiches'
 import SingleFiche from './Pages/SingleFiche'
 import PageTest from './Pages/PAgeTest'
 import Cart from './Pages/Cart'
+import OrderScreen from './Pages/orderScreen'
 
 
 
@@ -32,15 +33,15 @@ function App() {
        <Route path='/' component={Home} exact/>
        <Route path='/Commande' component={Commande}/>
               <Route path='/Register' component={Register}/>
+       <Route path='/Fiches' component={Fiches}/>
 
-       <Route path='/FirstPage' component={FirstPage}/>
+       <Route path='/FirstPage' component={FirstPage} exact/>
        <Route path='/History' component={Historique}/>
        <Route path='/profile' component={Profile}/>
        <Route path='/admin/userlist' component={userList}/>
         <Route path='/admin/productlist' component={productList}/>
        <Route path='/admin/user/:id/edit' component={UserEditScreen} />
        <Route path='/admin/product/:id/edit' component={productEditScreen} />
-       <Route path='/Fiches' component={Fiches}/>
        <Route path='/SingleFiche/:id' component={SingleFiche}/>
        <Route path='/About' component={About} />
        <Route path='/Products' component={Products} />
@@ -51,6 +52,7 @@ function App() {
        <Route path='/SignIn' component={SignIn} />
        <Route path='/cart' component={Cart} />
        <Route path='/SignUp' component={SignUp} />
+       <Route path='/order/:id' component={OrderScreen} />
 
 
         

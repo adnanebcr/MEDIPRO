@@ -5,6 +5,7 @@ import productRoutes from './routes/productRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import productListRoutes from './routes/productsListRoutes.js'
+import orderRoutes from './routes/orderRoutes.js'
 import {NotFound,ErrorHandler} from './middleware/errorMiddleware.js'
 import nodemailer from 'nodemailer'
 import bodyParser from 'body-parser';
@@ -116,6 +117,7 @@ app.use('/api/products',productRoutes)
 app.use('/api/productsList',productListRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/upload',uploadRoutes)
+app.use('/api/orders',orderRoutes)
 
 const __dirname=path.resolve()
 app.use('frontend/public/uploads',express.static(path.join(__dirname)))

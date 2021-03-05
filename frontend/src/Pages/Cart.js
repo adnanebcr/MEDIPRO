@@ -1,89 +1,177 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Button, Row, Col, ListGroup, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../Components/Message'
-import { addToCart1 } from '../Actions/cartActions'
+import { createOrder } from '../Actions/orderActions'
+import { ORDER_CREATE_RESET } from '../Constants/orderConstants'
+import { USER_DETAILS_RESET } from '../Constants/userConstants'
+import { Container } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 
-
-const CartScreen = () => {
-
-
+const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch()
 
   const cart = useSelector((state) => state.cart)
-  const { cartItems } = cart
+  const user= useSelector((state)=>state.userlogin)
+  console.log('user',user)
 
-  console.log(cartItems)
+console.log(cart)
+  //   Calculate prices
+  const addDecimals = (num) => {
+    return (Math.round(num * 100) / 100).toFixed( 2)
+  }
+
+  cart.itemsPrice = addDecimals(
+    cart.cartItems.reduce((acc, item) => acc + item.PPH * item.qty, 0)
+  )
+  
+  cart.taxPrice = addDecimals(Number((0.20 * cart.itemsPrice).toFixed(2)))
+  cart.totalPrice = (
+    Number(cart.itemsPrice) +
+    
+    Number(cart.taxPrice)
+  ).toFixed(2)
+
+  const orderCreate = useSelector((state) => state.orderCreate)
+  const { order, success, error } = orderCreate
 
 
- 
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`)
+      dispatch({ type: USER_DETAILS_RESET })
+      dispatch({ type: ORDER_CREATE_RESET })
+    }
+    // eslint-disable-next-line
+  }, [history, success])
+
+  const placeOrderHandler = () => {
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        itemsPrice: cart.itemsPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+      })
+    )
+  }
 
   return (
-    <Row>
-      <Col md={8}>
-        <h1>Votre Commande</h1> 
-        <Link to='/Commande'><Button variant='primary'>Passer une nouvelle commande</Button></Link>
-        {cartItems.length === 0 ? (
-          <Message>
-            Votre panier est vide 
-          </Message>
-        ) : (
+    <>
+     <Container fluid className='my-5'>
+        <Row>
+        <Col md={8}>
           <ListGroup variant='flush'>
-            {cartItems.map((item) => (
-              <ListGroup.Item key={item.product}>
-                <Row>
+            <ListGroup.Item>
+              <h2>Informations</h2>
+              <p>
+                <strong>Nom et prénom:</strong> {user.userInfo.name}
+              </p>
+              <p>
+                <strong>adresse postale : </strong>{user.userInfo.adress}
+              </p>
+              <p>
+                <strong>adresse mail : </strong>{user.userInfo.email}
+              </p>
+              <p>
+                <strong>Telephone : </strong>{user.userInfo.phone}
+              </p>
 
-                  <Col md={3}>
-                    <Link to={`/product/${item.product}`}>{item.designation}</Link>
-                  </Col>
-                  <Col md={2}>{item.PPH} MAD</Col>
-                  <Col md={2}>
-                   {item.qty}
-                  </Col>
-                  <Col md={2}>
-                    <Button
-                      type='button'
-                      variant='light'
-                    //   onClick={() => removeFromCartHandler(item.product)}
-                    >
-                      <i className='fas fa-trash'></i>
-                    </Button>
-                  </Col>
+               <p>
+                <strong>ICE : </strong>{user.userInfo.ICE}
+              </p>
+
+
+
+            </ListGroup.Item>
+
+
+            <ListGroup.Item>
+              <h2>Order Items</h2>
+              {cart.cartItems.length === 0 ? (
+                <Message>Votre panier est vide !</Message>
+              ) : (
+                <Table  bordered hover responsive className='table-sm'>
+          <thead>
+            <tr>
+              
+              <th>Designation</th>
+              <th>PPH</th>
+              <th>Quantité</th>
+              <th>Total</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            {cart.cartItems.map((item, index) => (
+              <tr key={item._id}>
+                <td className='text-left'>{item.designation}</td>
+                <td>
+                 {item.PPH}
+                </td>
+                
+                <td>
+                 {item.qty}
+                </td>
+                <td>
+                 {item.qty * item.PPH} MAD
+                </td>
+              
+               
+                  
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+              )}
+            </ListGroup.Item>
+          </ListGroup>
+        </Col>
+        <Col md={4}>
+          <Card>
+            <ListGroup variant='flush'>
+              <ListGroup.Item>
+                <h2>Order Summary</h2>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Row>
+                  <Col>Total Produits :</Col>
+                  <Col>{cart.itemsPrice} MAD</Col>
                 </Row>
               </ListGroup.Item>
-            ))}
-          </ListGroup>
-        )}
-      </Col>
-      <Col md={4}>
-        <Card>
-          {/* <ListGroup variant='flush'>
-            <ListGroup.Item>
-              <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-                items
-              </h2>
-              $
-              {cartItems
-                .reduce((acc, item) => acc + item.qty * item.price, 0)
-                .toFixed(2)}
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <Button
-                type='button'
-                className='btn-block'
-                disabled={cartItems.length === 0}
-                
-              >
-                Proceed To Checkout
-              </Button>
-            </ListGroup.Item>
-          </ListGroup> */}
-        </Card>
-      </Col>
-    </Row>
+              <ListGroup.Item>
+                <Row>
+                  <Col>TVA :</Col>
+                  <Col>{cart.taxPrice} MAD</Col>
+                </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Row>
+                  <Col>Total</Col>
+                  <Col>{cart.totalPrice} MAD</Col>
+                </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                {error && <Message variant='danger'>{error}</Message>}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Button
+                  type='button'
+                  variant='success'
+                  className='btn-block'
+                  disabled={cart.cartItems === 0}
+                  onClick={placeOrderHandler}
+                >
+                  Valider la commande
+                </Button>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+        </Col>
+      </Row>
+     </Container>
+    </>
   )
 }
 
-export default CartScreen
+export default PlaceOrderScreen

@@ -11,6 +11,7 @@ import '../App.css'
 import logo2 from '../Assets/logo-terapharm.png';
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 
 const Commande =  ({history}) => {
@@ -55,14 +56,14 @@ useEffect(() => {
 
                     <Table3/>
                     <Table4/>
-                    <Card className='my-3 text-left'>
-                      <h5>Nom : <input disabled value={userInfo.name}></input></h5>
-                      <h5>Adresse :<input disabled value={userInfo.adress}></input></h5>
-                      <h5>Telephone :<input disabled value={userInfo.phone}></input></h5>
-                      <h5>ICE :<input disabled value ={userInfo.ice}></input> </h5>
- <Button variant='primary' className='btn-lg'>
+                    <Card className='my-3 py-3 text-left'>
+                      <h5>Nom : {userInfo.name}</h5>
+                      <h5>Adresse :{userInfo.adress}</h5>
+                      <h5>Telephone :{userInfo.phone}</h5>
+                      <h5>ICE :{userInfo.ice} </h5>
+                    <div className='text-center'><Link to = '/Cart'><Button variant='success' className='btn-lg'>
                       Valider la commande
-                    </Button>                    
+                    </Button>      </Link>    </div>          
                     </Card>
                     </Col>
             </Row>

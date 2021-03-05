@@ -11,13 +11,31 @@ const orderSchema = mongoose.Schema(
         orderItems:
         [
           {
-              name :{type:String ,required:true},
+              designation :{type:String ,required:true},
               product :{type:mongoose.Schema.Types.ObjectId,required:true,ref:'Product'},
-              quantity:{type:Number,required:true},
-              price:{type:Number,required:true},
-              totalPrice:{type:Number,required:true}
+              qty:{type:Number,required:true},
+              PPH:{type:Number,required:true},
+              
           }  
+          
         ],
+        itemsPrice: {
+            type: Number,
+            required: true,
+            default: 0.0,
+            },
+            taxPrice: {
+            type: Number,
+            required: true,
+            default: 0.0,
+            },
+        
+            totalPrice: {
+            type: Number,
+            required: true,
+            default: 0.0,
+            },
+
       
 
     }, { timestamps: true }

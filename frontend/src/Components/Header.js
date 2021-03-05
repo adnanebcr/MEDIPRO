@@ -13,7 +13,6 @@ const Header = () => {
    const dispatch = useDispatch()
     const userlogin = useSelector(state => state.userlogin)
     const {userInfo}=userlogin
-    console.log('header',userlogin)
      const logoutHandler = () => {
     dispatch(logout())
   }
@@ -31,6 +30,7 @@ const Header = () => {
         <LinkContainer to="/Commande"><Nav.Link >Passer une commande</Nav.Link></LinkContainer>
         <LinkContainer to="/History"><Nav.Link >Consulter vos commandes</Nav.Link></LinkContainer>
         <LinkContainer to="/Fiches"><Nav.Link >Fiches Pharmaceutiques</Nav.Link></LinkContainer>
+        
 
      <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
        <LinkContainer to ="/profile"><NavDropdown.Item > Consulter le profil</NavDropdown.Item></LinkContainer> 

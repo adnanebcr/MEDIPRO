@@ -28,7 +28,7 @@ const ProductsPage = ({history}) => {
   
 
   useEffect(() => {
-    if (userInfo) {
+    if (userInfo && userInfo.isAdmin) {
       dispatch(listProducts())
     } else {
       history.push('/SignIn')
