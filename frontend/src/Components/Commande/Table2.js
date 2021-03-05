@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import {useDispatch,useSelector} from 'react-redux'
 import  {listProducts2} from '../../Actions/listActions' 
 import '../../App.css'
-import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
 import TableTest from './TableTest'
 

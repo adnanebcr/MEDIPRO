@@ -1,8 +1,7 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect } from "react";
 import {useDispatch,useSelector} from 'react-redux'
 import  {listProducts1} from '../../Actions/listActions'
 import '../../App.css'
-import { Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
 import TableTest from './TableTest'
 
@@ -18,6 +17,9 @@ const ProductsPage = () => {
     useEffect(() => {
       dispatch(listProducts1())
     }, [dispatch])
+
+    
+    
  
 
     return (

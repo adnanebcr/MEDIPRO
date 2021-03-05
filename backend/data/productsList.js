@@ -1,7 +1,7 @@
 
 
 
-const mediprolist1db = [
+const productsList = [
                 {liste:'mediliste1',designation: 'APENAT CP B15',PPH:31.15,PPC:44.50,Colisage:160,quantité:0,total:0},
                 {liste:'mediliste1',designation: 'APENAT CP B30',PPH:55.65,PPC:79.50,Colisage:135,quantité:0,total:0},
                 {liste:'mediliste1',designation: 'APENAT SB 200ml',PPH:59.15,PPC:84.50,Colisage:48,quantité:0,total:0},
@@ -48,7 +48,52 @@ const mediprolist1db = [
                 {liste:'mediliste1',designation:'VEGEBOM Pommade 45g',PPH:55.65,PPC:79.50,Colisage:72,quantité:0,total:0},
                 {liste:'mediliste1',designation:'VEGEBOM Creme chauffante 40ml',PPH:55.65,PPC:79.50,Colisage:72,quantité:0,total:0},
                 {liste:'mediliste1',designation:'VEGEBOM Gel raffraichissant 45ml',PPH:55.65,PPC:79.50,Colisage:72,quantité:0,total:0},
-                {liste:'mediliste1',designation:'ZETALAX Microlavement Bte6',PPH:55.65,PPC:99.50,Colisage:96,quantité:0,total:0}
+                {liste:'mediliste1',designation:'ZETALAX Microlavement Bte6',PPH:55.65,PPC:99.50,Colisage:96,quantité:0,total:0},
+                {liste:'mediliste2',designation:'ANSIOVIT CP B30',PPH:69.30,PPC:99.00,Colisage:120,quantité:0,total:0},
+                {liste:'mediliste2',designation:'CURARTI FORTE CP B30',PPH:104.65,PPC:149.50,Colisage:128,quantité:0,total:0},
+                {liste:'mediliste2',designation:'CYSTICAN Gel b30',PPH:69.65,PPC:99.50,Colisage:72,quantité:0,total:0},
+                {liste:'mediliste2',designation:'DEPURATTIVA SB 200ml ',PPH:62.97,PPC:89.95,Colisage:48,quantité:0,total:0},
+                {liste:'mediliste2',designation:'NEOBILINE Amp buv B10',PPH:62.65,PPC:89.50,Colisage:56,quantité:0,total:0},
+                {liste:'mediliste2',designation:'NEONAT Gélules B30',PPH:69.65,PPC:99.50,Colisage:120,quantité:0,total:0},
+                {liste:'mediliste2',designation:'OTOLAYA Spray Auri 50ml',PPH:55.65,PPC:79.50,Colisage:135,quantité:0,total:0},
+                {liste:'mediliste2',designation:'OTOLAYA Spray Auri 50ml',PPH:62.30,PPC:89.00,Colisage:24,quantité:0,total:0},
+                {liste:'mediliste2',designation:'RHINOLAYA Fort Spray Nasal 50ml',PPH:58.45,PPC:83.50,Colisage:24,quantité:0,total:0},
+                {liste:'teraliste1',designation:'AINAT CP B30',PPH:55.65,PPC:79.50,Colisage:135,quantité:0,total:0},
+                {liste:'teraliste1',designation:'CIRCULEX Crème 30g',PPH:41.65,PPC:59.50,Colisage:80,quantité:0,total:0},
+                {liste:'teraliste1',designation:'DYNATENS CP B15',PPH:55.65,PPC:79.50,Colisage:117,quantité:0,total:0},
+                {liste:'teraliste1',designation:'DYNATENS Gttes buv 30ml ',PPH:55.65,PPC:79.50,Colisage:84,quantité:0,total:0},
+                {liste:'teraliste1',designation:'ISILAX CP B30',PPH:55.65,PPC:79.50,Colisage:135,quantité:0,total:0},
+                {liste:'teraliste1',designation:'ISILAX SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste1',designation:'KALMAGAS CP B30',PPH:55.93,PPC:79.90,Colisage:135,quantité:0,total:0},
+                {liste:'teraliste1',designation:'KALMAGAS CP B60',PPH:90.30,PPC:129.00,Colisage:90,quantité:0,total:0},
+                {liste:'teraliste1',designation:'KALMAGAS TRANSIT CP B30',PPH:55.93,PPC:79.90,Colisage:135,quantité:0,total:0},
+                {liste:'teraliste1',designation:'FITOBEMBI Appetit SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste1',designation:'FITOBEMBI Multivit SB 200ml',PPH:69.30,PPC:99.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste1',designation:'FITOBEMBI Nez Gorge SB 200ml',PPH:55.30,PPC:79.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste1',designation:'FITOBEMBI Spray Gorge 20ml',PPH:55.65,PPC:79.50,Colisage:84,quantité:0,total:0},
+                {liste:'teraliste1',designation:'FITOBEMBI Sommeil SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste1',designation:'NURAX CP B30',PPH:55.86,PPC:79.80,Colisage:135,quantité:0,total:0},
+                {liste:'teraliste1',designation:'NURAX SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste1',designation:'THERAMAG 300g Gel B30',PPH:58.80,PPC:84.00,Colisage:96,quantité:0,total:0},
+                {liste:'teraliste2',designation:'CURALER Capsules B30',PPH:69.65,PPC:99.50,Colisage:110,quantité:0,total:0},
+                {liste:'teraliste2',designation:'CURCOL Capsules B30',PPH:69.65,PPC:99.50,Colisage:90,quantité:0,total:0},
+                {liste:'teraliste2',designation:'CIRCULEX CP B30',PPH:90.30,PPC:129.00,Colisage:120,quantité:0,total:0},
+                {liste:'teraliste2',designation:'D3 NORM gttes buv 30ml',PPH:55.65,PPC:79.50,Colisage:84,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOBEMBI Fer SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOBEMBI Gaz Gtts buv 30ml',PPH:58.80,PPC:84.00,Colisage:84,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOBEMBI Gaz SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOBEMBI Immunité SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOBEMBI Transit SB 200ml',PPH:58.80,PPC:84.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOFER CP B30',PPH:55.86,PPC:79.80,Colisage:135,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOFER PRONATAL CP B30',PPH:69.65,PPC:99.50,Colisage:120,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOFER SB 200ml',PPH:62.30,PPC:89.00,Colisage:48,quantité:0,total:0},
+                {liste:'teraliste2',designation:'FITOLAT CP B30',PPH:55.93,PPC:79.90,Colisage:120,quantité:0,total:0},
+                {liste:'teraliste2',designation:'GENESTIN CP B30',PPH:104.93,PPC:149.90,Colisage:120,quantité:0,total:0},
+                {liste:'teraliste2',designation:'GENESTION SPM CP B30',PPH:69.65,PPC:99.50,Colisage:120,quantité:0,total:0},
+                {liste:'teraliste2',designation:'KALMACOL CP B30',PPH:55.93,PPC:79.90,Colisage:120,quantité:0,total:0},
+                {liste:'teraliste2',designation:'KALMAGAS Gttes Buv 30ml',PPH:58.80,PPC:84.00,Colisage:84,quantité:0,total:0}
+
 ]
 
-export default mediprolist1db
+export default productsList 
+

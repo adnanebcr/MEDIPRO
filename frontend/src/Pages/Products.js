@@ -1,4 +1,4 @@
-import React, { useEffect ,useState} from "react";
+import React, { useEffect } from "react";
 import {useDispatch,useSelector} from 'react-redux'
 import  {listProducts} from '../Actions/productActions'
 import { Col } from 'react-bootstrap'
@@ -26,9 +26,9 @@ const ProductsPage = ({match}) => {
     }, [dispatch,keyword])
  
     
-    const [filters,setFilters]=useState({
-      pathologie:[],
-    })
+    // const [filters,setFilters]=useState({
+    //   pathologie:[],
+    // })
 
     const showFilteredResults=(filters)=>{
         const variables = {

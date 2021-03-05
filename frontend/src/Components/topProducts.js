@@ -52,14 +52,11 @@
 
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Image } from 'react-bootstrap'
 import Carousel from "react-elastic-carousel";
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from './Loader'
 import Message from './Message'
 import  {listTopProducts} from '../Actions/productActions'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
 import Item from "./Item";
 import '../App.css'
 import { Container } from 'react-bootstrap';

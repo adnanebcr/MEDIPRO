@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import {useDispatch,useSelector} from 'react-redux'
 import  {listProducts} from '../Actions/productActions'
-import C1 from '../Components/Caroussel'
 import '../App.css'
 import { LinkContainer } from "react-router-bootstrap";
 import { Button } from "react-bootstrap";

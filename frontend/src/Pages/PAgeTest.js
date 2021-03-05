@@ -1,13 +1,13 @@
-import { useSelector,useState } from 'react-redux'
+import { useSelector } from 'react-redux'
 import React, {  useEffect } from 'react'
 import Table1 from '../Components/Commande/Table1Test'
 
 import { Row ,Col, Container} from 'react-bootstrap'
 import logo from '../Assets/logo-medipro2.png';
 import '../App.css'
-import logo2 from '../Assets/logo-terapharm.png';
-import { Card } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
+// import logo2 from '../Assets/logo-terapharm.png';
+// import { Card } from 'react-bootstrap'
+// import { Button } from 'react-bootstrap'
 
 
 const Commande =  ({history}) => {
