@@ -37,14 +37,21 @@ useEffect(() => {
                                         src={logo}
                                     /></div>
                     
-                    <Table1/>
-                    <Table2/>
                     </Col>
                     <Col xl={6} lg={6} md={12} sm={12} className='text-center'>
                       <div className='text-center my-2 '><img className="App-logo"
                                         alt="..."
                                         src={logo2}
                                     /></div>
+                    </Col>
+            </Row>
+             <Row>
+                <Col xl={6} lg={6} md={12} sm={12}>
+                 
+                    <Table1/>
+                    <Table2/>
+                    </Col>
+                    <Col xl={6} lg={6} md={12} sm={12} className='text-center'>
 
                     <Table3/>
                     <Table4/>

@@ -20,6 +20,7 @@ import productEditScreen from './Pages/productEditAdmin'
 import Fiches from './Pages/Fiches'
 import SingleFiche from './Pages/SingleFiche'
 import PageTest from './Pages/PAgeTest'
+import Cart from './Pages/Cart'
 
 
 
@@ -48,6 +49,7 @@ function App() {
        <Route path='/Contact' component={Contact} />
        <Route path='/Test' component={PageTest} />
        <Route path='/SignIn' component={SignIn} />
+       <Route path='/cart' component={Cart} />
        <Route path='/SignUp' component={SignUp} />
 
 
