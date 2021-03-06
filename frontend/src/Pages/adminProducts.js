@@ -90,6 +90,7 @@ const ProductList = ({ history,match }) => {
               
               <th>Gammes</th>
               <th>Liste</th>
+              <th>metadesc</th>
 
               <th></th>
             </tr>
@@ -107,6 +108,9 @@ const ProductList = ({ history,match }) => {
                 </td>
                 <td>
                  {product.liste}
+                </td>
+                <td>
+                 {product.metadesc}
                 </td>
               
                 <td>

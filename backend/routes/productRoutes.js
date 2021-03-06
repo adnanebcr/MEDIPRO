@@ -2,7 +2,8 @@ import express from 'express'
 import {getProducts,getProductsById, deleteProduct,
   createProduct,
   updateProduct,
-  getTopProducts} from '../controllers/productController.js'
+  getTopProducts,
+getNewProducts} from '../controllers/productController.js'
   import {protect,admin} from '../middleware/authMiddleware.js'
 
 
@@ -24,6 +25,7 @@ router.route('/').get(getProducts)
 // @access Public 
 router.route('/').get(getProducts).post(protect, admin, createProduct)
 router.get('/top', getTopProducts)
+router.get('/New',getNewProducts)
 router
   .route('/:id')
   .get(getProductsById)

@@ -139,10 +139,20 @@ const updateProduct = asyncHandler(async (req, res) => {
 // @route   GET /api/products/top
 // @access  Public
 const getTopProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({metadesc:'produits-phares'}).limit(5)
+  const products = await Product.find({metadesc:'produits-phares'}).limit(10)
 
   res.json(products)
 })
+
+// @desc    Get top rated products
+// @route   GET /api/products/top
+// @access  Public
+const getNewProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({metadesc:'nouveau'}).limit(10)
+
+  res.json(products)
+})
+
 
 
 
@@ -153,6 +163,7 @@ export {
   createProduct,
   updateProduct,
   getTopProducts,
+  getNewProducts
 
 }
 

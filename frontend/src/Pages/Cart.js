@@ -114,7 +114,7 @@ console.log(cart)
                  {item.qty}
                 </td>
                 <td>
-                 {item.qty * item.PPH} MAD
+                 {(item.qty * item.PPH).toFixed(2)} MAD
                 </td>
               
                

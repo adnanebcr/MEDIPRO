@@ -1,40 +1,51 @@
-import React,{useState} from 'react'
-import {Radio} from 'antd'
-import {MDBCard,MDBCardHeader,MDBCardBody} from 'mdbreact'
+import React, { useState } from 'react'
+import { Checkbox } from 'antd';
+import { Card } from 'react-bootstrap';
 
 
+function CheckBox(props) {
 
-function CheckboxProducts(props) {
+    const [Checked, setChecked] = useState([])
 
-    const [Value, setValue] = useState('0')
+    const handleToggle = (value) => {
 
-    const renderRadioBox = () => (
-        props.list &&  props.list.map((value) => (
-           <p> <Radio key={value._id} value={`${value._id}`}>{value.name}</Radio></p>
-        ))
-    )
+        const currentIndex = Checked.indexOf(value);
+        const newChecked = [...Checked];
 
-    const handleChange = (event) => {
-        setValue(event.target.value)
-        console.log('value',Value)
-        props.handleFilters(event.target.value)
+        if (currentIndex === -1) {
+            newChecked.push(value)
+        } else {
+            newChecked.splice(currentIndex, 1)
+        }
+
+        setChecked(newChecked)
+        props.handleFilters(newChecked)
+        //update this checked information into Parent Component 
+
     }
 
-
+    const renderCheckboxLists = () => props.list && props.list.map((value, index) => (
+        <React.Fragment key={index}>
+            <div className='ml-5'><Checkbox
+                onChange={() => handleToggle(value._id)}
+                type="checkbox"
+                checked={Checked.indexOf(value._id) === -1 ? false : true}
+            />&nbsp;&nbsp;
+            <span>{value.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </React.Fragment>
+    ))
 
     return (
-        <div className='text-left  p-3 mt-3'>
-            <MDBCard className=' grey lighten-3 pt-3 pb-3' lg='3' md='6'>
-                <MDBCardHeader>Pathologie</MDBCardHeader>
-                <MDBCardBody>
-                      <Radio.Group onChange={handleChange} value={Value}>
-
-                        {renderRadioBox()}
-                         </Radio.Group>
-                        </MDBCardBody>
-           </MDBCard>
+        <div>
+            
+               
+                   <Card className='my-3 py-3'>
+                       <Card.Header className='text-center'><h5><strong>pathologie</strong></h5></Card.Header>
+                        <Card.Body>{renderCheckboxLists()}</Card.Body>
+                   </Card>
+               
         </div>
     )
 }
 
-export default CheckboxProducts
+export default CheckBox

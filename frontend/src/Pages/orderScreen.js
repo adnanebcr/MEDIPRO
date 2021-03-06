@@ -20,12 +20,12 @@ console.log('ordeer',order)
 
   useEffect(() => {
    dispatch(getOrderDetails(orderId))
-  },)
+  },[dispatch ,orderId])
 
 
   return loading ? <Loader/> : error ? <Message variant='danger' >{error}</Message>
   : <>
-    <Container>
+    <Container className='my-5'>
         <h1>Votre commande est bien validée </h1>
     <h5>Commande : {order._id}</h5>
 
