@@ -1,52 +1,45 @@
- /* Navbar Section */
+/* Navbar Section */
 
-#headerComponent .App-logo
-{
-     width: 150px;
-     max-height: fit-content;
+#headerComponent .App-logo {
+  width: 150px;
+  max-height: fit-content;
 }
 
+/* Hero Section */
 
-
- /* Hero Section */
-
-#hero-title    
-{
-     font-family: 'Tangerine', cursive;
-     font-size: 130px;
-
+#hero-title {
+  font-family: "Tangerine", cursive;
+  font-size: 130px;
 }
 
+/* About Section */
 
-
- /* About Section */
-
-#banniere
-{
+#banniere {
   width: 100%;
 }
 
-#About h1
-{
-
+#About h1 {
 }
 
- /* Contact Section */
+/* Contact Section */
 
 #contact-section .view {
- background: rgb(126,138,255);
-background: linear-gradient(90deg, rgba(126,138,255,1) 0%, rgba(158,255,140,1) 100%);
+  background: rgb(126, 138, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(126, 138, 255, 1) 0%,
+    rgba(158, 255, 140, 1) 100%
+  );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   min-height: 100vh;
   height: auto;
   margin-top: -40px;
-  margin-bottom:-90px;
+  margin-bottom: -90px;
 }
 
-#contact-section #contact-card
-{
+#contact-section #contact-card {
   margin-top: 50px;
 }
 #contact-section .gradient {
@@ -93,14 +86,12 @@ background: linear-gradient(90deg, rgba(126,138,255,1) 0%, rgba(158,255,140,1) 1
   color: #fff !important;
 }
 
-#contact-section .icon
-{
-    color: #fff !important;
+#contact-section .icon {
+  color: #fff !important;
 }
 
 /*Commande section*/
-#Commande .App-logo
-{
+#Commande .App-logo {
   width: 200px;
 }
 
@@ -111,23 +102,31 @@ table {
   width: 100%;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 th {
   background-color: gray;
   color: white;
 }
 
+#Fiches img {
+  width: 130px;
+}
 
-#Fiches img
-{width: 130px;}
-
-#imgCarousel
-{
+#imgCarousel {
   width: 400px;
+}
+
+/* Product style */
+
+.product-name {
+  font-family: "Shippori Mincho B1", serif;
 }

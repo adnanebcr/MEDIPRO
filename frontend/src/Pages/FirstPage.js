@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux'
 import React, {  useEffect } from 'react'
+import TopProducts from '../Components/topProducts'
+import NewProducts from '../Components/newProducts'
 
 const FirstPage = ({history}) => {
 
@@ -12,7 +14,8 @@ useEffect(() => {
   })
     return (
         <div>
-            This is the first Page
+               <TopProducts/>
+        <NewProducts/>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-const pathologie = [
+const gammes = [
        {
         "_id": 1,
         "name":"Gastro-entérologie"
@@ -31,5 +31,5 @@ const pathologie = [
 
 
 export {
-   pathologie
+   gammes
 }

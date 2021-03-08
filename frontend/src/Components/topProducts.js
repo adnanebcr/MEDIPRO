@@ -88,7 +88,7 @@ const ProductCarousel = () => {
   ) : error ? (
     <Message variant='danger'>{error}</Message>
   ) : (
-     <Container>
+     <Container fluid>
        <Carousel breakPoints={breakPoints}>
       {products.map((product) => (
        <Item><div><Link to ={`/product/${product._id}`}><img id='imgCarousel' src={product.image}alt={product.name}></img></Link>
