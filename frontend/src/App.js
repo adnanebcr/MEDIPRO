@@ -22,6 +22,7 @@ import SingleFiche from "./Pages/SingleFiche";
 import PageTest from "./Pages/PAgeTest";
 import Cart from "./Pages/Cart";
 import OrderScreen from "./Pages/orderScreen";
+import orderList from "./Pages/adminOrderList";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/admin/productlist" component={productList} />
         <Route path="/admin/user/:id/edit" component={UserEditScreen} />
         <Route path="/admin/product/:id/edit" component={productEditScreen} />
+        <Route path="/admin/orderlist" component={orderList} />
         <Route path="/SingleFiche/:id" component={SingleFiche} />
         <Route path="/About" component={About} />
         <Route path="/Products" component={Products} />

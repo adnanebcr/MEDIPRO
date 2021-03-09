@@ -5,6 +5,7 @@ import logo from "../Assets/logo-medipro.png";
 import { NavDropdown, Nav, Navbar } from "react-bootstrap";
 import "../App.css";
 import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -17,11 +18,12 @@ const Header = () => {
   return (
     <header id="headerComponent">
       <Navbar bg="primary" variant="dark" expand="lg">
-        <Navbar.Brand>
-          {" "}
-          <img className="App-logo" alt="..." src={logo} />
-        </Navbar.Brand>
-
+        <Link to="/">
+          <Navbar.Brand>
+            {" "}
+            <img className="App-logo" alt="..." src={logo} />
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           {userInfo ? (

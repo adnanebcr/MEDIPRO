@@ -26,12 +26,14 @@ const ProductsPage = ({ match, history }) => {
   const [Filters, setFilters] = useState({
     gammes: [],
   });
-
-  console.log(products);
-  var newArray = products.filter(function (ele) {
-    return ele.gammes === "gastro-entérologie";
+  console.log(Filters);
+  const newProducts = products.filter(function (products) {
+    if (products.gammes === { Filters }) {
+      return products;
+    }
   });
-  console.log(newArray);
+
+  console.log("newArray", newProducts);
   const showFilteredResults = (filters) => {
     const variables = {
       filters: filters,
