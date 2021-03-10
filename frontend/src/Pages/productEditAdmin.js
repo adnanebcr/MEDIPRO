@@ -20,29 +20,21 @@ const ProductEditScreen = ({ match, history }) => {
   const [fiche, setFiche] = useState("");
   const [gammes, setGammes] = useState("");
   const [description, setDescription] = useState("");
+  const [description2, setDescription2] = useState("");
+
+  const [description3, setDescription3] = useState("");
+
   const [proprietes, setProprietes] = useState("");
   const [conseil, setConseil] = useState("");
   const [proprietes2, setProprietes2] = useState("");
+  const [proprietes3, setProprietes3] = useState("");
+
   const [conseil2, setConseil2] = useState("");
+  const [conseil3, setConseil3] = useState("");
+
   const [precautions1, setPrecautions1] = useState("");
   const [precautions2, setPrecautions2] = useState("");
   const [precautions3, setPrecautions3] = useState("");
-
-  const [uploading, setUploading] = useState(false);
-
-  //    name: 'APIXOL 22®',
-  //         type:'Solution buvable Adultes',
-  //         metadesc: 'produits-phares',
-  //         image: '/products/apixol/ApixolAdsirop.png',
-  //           fiche:'test1',
-  //         gammes: 'Gastro-entérologie',
-  //         description: 'description APIXOL',
-  //         proprietes: 'Apixol solution buvable est à base d\'extraits de plantes riches en actifs naturels qui agissent en synergie pour désencombrer les bronches en cas de toux grasse et apaiser l’irritation des voies respiratoires en cas de toux sèche tout en renforçant les défenses naturelles de l’organisme',
-  //         conseil: 'Toux sèche,Toux grasse',
-  //         precautions: 'cuillère à soupe 3 à 4 fois par jour.',
-  //         PPH:55.30,
-  //         PPC:79.00,
-  //         Colisage:48
 
   const dispatch = useDispatch();
 
@@ -72,11 +64,15 @@ const ProductEditScreen = ({ match, history }) => {
         setFiche(product.fiche);
         setGammes(product.gammes);
         setDescription(product.description);
+        setDescription2(product.description2);
+        setDescription3(product.description3);
         setProprietes(product.proprietes);
         setProprietes2(product.proprietes2);
+        setProprietes3(product.proprietes3);
 
         setConseil(product.conseil);
         setConseil2(product.conseil2);
+        setConseil3(product.conseil3);
 
         setPrecautions1(product.precautions1);
         setPrecautions2(product.precautions2);
@@ -85,29 +81,29 @@ const ProductEditScreen = ({ match, history }) => {
     }
   }, [dispatch, history, productId, product, successUpdate]);
 
-  const uploadFileHandler = async (e) => {
-    const file = e.target.files[0];
-    const formData = new FormData();
-    console.log("formData", formData);
-    formData.append("image", file);
-    setUploading(true);
+  // const uploadFileHandler = async (e) => {
+  //   const file = e.target.files[0];
+  //   const formData = new FormData();
+  //   console.log("formData", formData);
+  //   formData.append("image", file);
+  //   setUploading(true);
 
-    try {
-      const config = {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      };
+  //   try {
+  //     const config = {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //     };
 
-      const { data } = await axios.post("/api/upload", formData, config);
+  //     const { data } = await axios.post("/api/upload", formData, config);
 
-      setImage(data);
-      setUploading(false);
-    } catch (error) {
-      console.error(error);
-      setUploading(false);
-    }
-  };
+  //     setImage(data);
+  //     setUploading(false);
+  //   } catch (error) {
+  //     console.error(error);
+  //     setUploading(false);
+  //   }
+  // };
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -122,8 +118,14 @@ const ProductEditScreen = ({ match, history }) => {
         liste,
         gammes,
         description,
+        description2,
+        description3,
         proprietes,
+        proprietes2,
+        proprietes3,
         conseil,
+        conseil2,
+        conseil3,
         precautions1,
         precautions2,
         precautions3,
@@ -227,6 +229,26 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
             </Form.Group>
+            <Form.Group controlId="type">
+              <Form.Label>Description 2</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Enter description"
+                value={description2}
+                onChange={(e) => setDescription2(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group controlId="type">
+              <Form.Label>Description 3</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Enter description"
+                value={description3}
+                onChange={(e) => setDescription3(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
             <Form.Group controlId="type">
               <Form.Label>Propriétés</Form.Label>
@@ -251,6 +273,17 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId="type">
+              <Form.Label>Propriétés 3</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Enter propriétés"
+                value={proprietes3}
+                onChange={(e) => setProprietes3(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="type">
               <Form.Label>Conseils</Form.Label>
               <Form.Control
                 as="textarea"
@@ -269,6 +302,17 @@ const ProductEditScreen = ({ match, history }) => {
                 placeholder="Enter conseil"
                 value={conseil2}
                 onChange={(e) => setConseil2(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="type">
+              <Form.Label>Conseils 3</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Enter conseil"
+                value={conseil3}
+                onChange={(e) => setConseil3(e.target.value)}
               ></Form.Control>
             </Form.Group>
 

@@ -62,13 +62,17 @@ const createProduct = asyncHandler(async (req, res) => {
     fiche: "/Fiches/Apenat.jpg",
     gammes: "_",
     description: "_",
+    description2: "",
+    description3: "",
     proprietes: "_",
-    proprietes2: "_",
+    proprietes2: "",
+    proprietes3: "",
     conseil: "_",
-    conseil2: "_",
+    conseil2: "",
+    conseil3: "",
     precautions1: "_",
-    precautions2: "_",
-    precautions3: "_",
+    precautions2: "",
+    precautions3: "",
   });
 
   const createdProduct = await product.save();
@@ -88,8 +92,14 @@ const updateProduct = asyncHandler(async (req, res) => {
     liste,
     gammes,
     description,
+    description2,
+    description3,
     proprietes,
+    proprietes2,
+    proprietes3,
     conseil,
+    conseil2,
+    conseil3,
     precautions1,
     precautions2,
     precautions3,
@@ -106,11 +116,17 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.liste = liste;
     product.metadesc = metadesc;
     product.description = description;
+    product.description2 = description2;
+    product.description3 = description3;
     product.image = image;
     product.fiche = fiche;
     product.gammes = gammes;
     product.proprietes = proprietes;
+    product.proprietes2 = proprietes2;
+    product.proprietes3 = proprietes3;
     product.conseil = conseil;
+    product.conseil2 = conseil2;
+    product.conseil3 = conseil3;
     product.precautions1 = precautions1;
     product.precautions2 = precautions2;
     product.precautions3 = precautions3;

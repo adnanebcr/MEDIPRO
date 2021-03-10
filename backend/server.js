@@ -113,50 +113,11 @@ app.use("/Cart", (req, res) => {
                   <strong>Nom et prénom:</strong> ${Data.clientname}
                 </p>
                 <p>
-                  <strong>adresse mail : </strong>
+                  <strong> adresse mail : </strong>
                   ${Data.mail}
                 </p>
-
-             
-                <h2>Order Items</h2>
-               <Table bordered hover responsive className="table-sm">
-                    <thead>
-                      <tr>
-                        <th>Designation</th>
-                        <th>PPH</th>
-                        <th>Quantité</th>
-                        <th>Total</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {${Data.cartItems.map}((${item}) => (
-                        <tr >
-                          <td className="text-left">${item.designation}</td>
-                          <td>${item.PPH}</td>
-
-                          <td>${item.qty}</td>
-                          <td>${(item.qty * item.PPH).toFixed(2)} MAD</td>
-                        </tr>
-                      ))}
-               
-                  <h2>Order Summary</h2>
-
-                  <Row>
-                    <Col>Total Produits :</Col>
-                    <Col>${Data.itemsPrice} MAD</Col>
-                  </Row>
-               
-                  <Row>
-                    <Col>TVA :</Col>
-                    <Col>${Data.taxPrice} MAD</Col>
-                  </Row>
-             
-                  <Row>
-                    <Col>Total</Col>
-                    <Col>${Data.totalPrice} MAD</Col>
-                  </Row>
-             
     `, // html body
+    attachements: [{ filename }],
   };
 
   let info = transporter.sendMail(mailOptions, function (err, info) {

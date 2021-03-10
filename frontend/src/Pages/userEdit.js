@@ -14,6 +14,7 @@ const UserEditScreen = ({ match, history }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
+  const [issuperAdmin, setIssuperAdmin] = useState(false);
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const UserEditScreen = ({ match, history }) => {
         setName(user.name);
         setEmail(user.email);
         setIsAdmin(user.isAdmin);
+        setIssuperAdmin(user.issuperAdmin);
         setPassword(user.password);
       }
     }
@@ -46,7 +48,7 @@ const UserEditScreen = ({ match, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(updateUser({ _id: userId, name, email, isAdmin }));
+    dispatch(updateUser({ _id: userId, name, email, isAdmin, issuperAdmin }));
   };
 
   return (
@@ -100,6 +102,14 @@ const UserEditScreen = ({ match, history }) => {
                 label="Is Admin"
                 checked={isAdmin}
                 onChange={(e) => setIsAdmin(e.target.checked)}
+              ></Form.Check>
+            </Form.Group>
+            <Form.Group controlId="issuperadmin">
+              <Form.Check
+                type="checkbox"
+                label="Is superAdmin"
+                checked={issuperAdmin}
+                onChange={(e) => setIssuperAdmin(e.target.checked)}
               ></Form.Check>
             </Form.Group>
 

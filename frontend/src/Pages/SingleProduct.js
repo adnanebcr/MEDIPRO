@@ -44,7 +44,9 @@ const SingleProduct = ({ match }) => {
                   <p>{product.type}</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <strong>{product.gammes}</strong>
+                  <p>
+                    <strong className="green-text">{product.gammes}</strong>
+                  </p>
                 </ListGroup.Item>
                 <ListGroup.Item>{product.description}</ListGroup.Item>
               </ListGroup>
@@ -55,8 +57,8 @@ const SingleProduct = ({ match }) => {
               <div className="descriptionarea mb-5">
                 <Tab.Container defaultActiveKey="Proprietes">
                   <Row>
-                    <Col sm={3}>
-                      <Nav variant="tabs" className="flex-column">
+                    <Col sm={4}>
+                      <Nav className="flex-column">
                         <Nav.Item>
                           <Nav.Link eventKey="Proprietes" className="nav">
                             <h5>Propriétés</h5>
@@ -71,12 +73,12 @@ const SingleProduct = ({ match }) => {
 
                         <Nav.Item>
                           <Nav.Link eventKey="Precautions" className="nav">
-                            <h5>Précautions</h5>{" "}
+                            <h5>Précautions</h5>
                           </Nav.Link>
                         </Nav.Item>
                       </Nav>
                     </Col>
-                    <Col sm={9}>
+                    <Col sm={8}>
                       <Tab.Content>
                         <Tab.Pane eventKey="Proprietes">
                           <h5 className="green-text text-left product-title">
@@ -84,6 +86,7 @@ const SingleProduct = ({ match }) => {
                           </h5>
                           <p>{product.proprietes}</p>
                           <p>{product.proprietes2}</p>
+                          <p>{product.proprietes3}</p>
                         </Tab.Pane>
 
                         <Tab.Pane eventKey="Conseil">
@@ -92,6 +95,7 @@ const SingleProduct = ({ match }) => {
                           </h5>
                           <p>{product.conseil}</p>
                           <p>{product.conseil2}</p>
+                          <p>{product.conseil3}</p>
                         </Tab.Pane>
 
                         <Tab.Pane eventKey="Precautions">

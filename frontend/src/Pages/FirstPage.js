@@ -1,23 +1,20 @@
-import { useSelector } from 'react-redux'
-import React, {  useEffect } from 'react'
-import TopProducts from '../Components/topProducts'
-import NewProducts from '../Components/newProducts'
+import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import TopProducts from "../Components/Home/topProducts";
 
-const FirstPage = ({history}) => {
-
-      const userLogin = useSelector((state) => state.userlogin)
-  const { userInfo } = userLogin
-useEffect(() => {
+const FirstPage = ({ history }) => {
+  const userLogin = useSelector((state) => state.userlogin);
+  const { userInfo } = userLogin;
+  useEffect(() => {
     if (!userInfo) {
-      history.push('/Signin')
+      history.push("/Signin");
     }
-  })
-    return (
-        <div>
-               <TopProducts/>
-        <NewProducts/>
-        </div>
-    )
-}
+  });
+  return (
+    <div>
+      <TopProducts />
+    </div>
+  );
+};
 
-export default FirstPage
+export default FirstPage;
