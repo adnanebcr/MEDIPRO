@@ -76,7 +76,7 @@ const PlaceOrderScreen = ({ history }) => {
         console.log("message non envoyé");
       });
   };
-
+  console.log("userInfo,", user.userInfo);
   return (
     <>
       <Container fluid className="my-5">

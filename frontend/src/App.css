@@ -36,7 +36,13 @@ h6 {
 }
 
 .green-text {
-  color: green;
+  color: #50b614;
+  font-family: "Redressed", cursive;
+  font-size: 50px;
+}
+
+.green-text1 {
+  color: #50b614;
 }
 
 .title {
@@ -45,7 +51,11 @@ h6 {
 
 p {
   font-family: "Karla", sans-serif;
-  font-size: 18px;
+}
+
+.about-img {
+  width: 80%;
+  border-radius: 10%;
 }
 /* Contact Section */
 
@@ -148,7 +158,7 @@ th {
 }
 
 #imgCarousel {
-  width: 400px;
+  width: 300px;
 }
 
 /* Product style */

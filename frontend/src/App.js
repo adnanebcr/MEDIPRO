@@ -45,7 +45,7 @@ function App() {
         <Route path="/SingleFiche/:id" component={SingleFiche} />
         <Route path="/About" component={About} />
         <Route path="/Products" component={Products} />
-        <Route path="/search/:keyword" component={Products} exact />
+        <Route path="/Products/:keyword" component={Products} exact />
         <Route path="/Gammes/:keyword" component={Products} exact />
         <Route path="/Product/:id" component={SingleProduct} />
         <Route path="/Contact" component={Contact} />

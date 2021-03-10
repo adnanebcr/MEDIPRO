@@ -13,11 +13,8 @@ const UserListScreen = ({ history }) => {
   const userList = useSelector((state) => state.userList);
   const { loading, error, users } = userList;
 
-  console.log(users);
-
   const userLogin = useSelector((state) => state.userlogin);
   const { userInfo } = userLogin;
-  console.log("userInfo", userInfo);
   const userDelete = useSelector((state) => state.userDelete);
   const { success: successDelete } = userDelete;
 

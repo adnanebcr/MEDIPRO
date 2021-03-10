@@ -52,7 +52,7 @@ const Commande = ({ history }) => {
               </Row>
               <h5>Nom : {userInfo.name}</h5>
               <h5>Adresse :{userInfo.adress}</h5>
-              <h5>Telephone :{userInfo.phone}</h5>
+              <h5>Telephone :{userInfo.tel}</h5>
               <h5>
                 ICE :<p>{userInfo.ice}</p>{" "}
               </h5>

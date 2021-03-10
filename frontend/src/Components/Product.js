@@ -16,7 +16,7 @@ const Product = ({ product }) => {
           <h4 className="product-name">{product.name}</h4>
         </Card.Title>
         <p>
-          <strong>{product.type}</strong>
+          <span className="green-text1">{product.type}</span>
         </p>
         <Link to={`/Product/${product._id}`}>
           {" "}

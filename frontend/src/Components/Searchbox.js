@@ -7,10 +7,10 @@ const SearchBox = ({ history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim().toLowerCase()) {
-      history.push(`/search/${keyword}`);
+      history.push(`/Products/${keyword}`);
       console.log(keyword.trim());
     } else {
-      history.push("/products");
+      history.push("/Products/");
     }
   };
 

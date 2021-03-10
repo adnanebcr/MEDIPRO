@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Checkbox } from "antd";
 import { Card } from "react-bootstrap";
 
-function CheckBox(props) {
+function CheckBox(props, history) {
   const [arrayFilter, setArrayFilter] = useState([]);
 
   const handleFilter = (value) => {
@@ -11,8 +11,8 @@ function CheckBox(props) {
     } else {
       let newArray = arrayFilter.filter((el) => el !== value);
       setArrayFilter(newArray);
-      console.log("newArray", newArray);
     }
+    history.push("/Products/");
   };
   console.log("arrayFilter", arrayFilter);
   const renderCheckboxLists = () =>

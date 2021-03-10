@@ -17,7 +17,7 @@ const authUser = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       adress: user.adress,
       ice: user.ice,
-      phone: user.phone,
+      tel: user.tel,
       issuperAdmin: user.issuperAdmin,
       token: generateToken(user._id),
     });
@@ -32,7 +32,7 @@ const authUser = asyncHandler(async (req, res) => {
 // @access Public
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password, adress, ice } = req.body;
+  const { name, email, password, adress, ice, tel } = req.body;
   const userExists = await User.findOne({ email });
   if (userExists) {
     res.status(400);
@@ -44,6 +44,7 @@ const registerUser = asyncHandler(async (req, res) => {
     password,
     ice,
     adress,
+    tel,
   });
 
   if (user) {
@@ -54,6 +55,7 @@ const registerUser = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       adress: user.adress,
       ice: user.ice,
+      tel: user.tel,
       token: generateToken(user._id),
     });
   } else {
@@ -77,6 +79,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       adress: user.adress,
       ice: user.ice,
+      tel: user.tel,
     });
   } else {
     res.status(404);
@@ -108,6 +111,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       issuperAdmin: updateUser.issuperAdmin,
       adress: updateUser.adress,
       ice: updateUser.ice,
+      tel: updateUser.tel,
       token: generateToken(updateUser._id),
     });
   } else {
@@ -158,19 +162,28 @@ const getUserById = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 const updateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
-
+  console.log("user3", user);
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
     user.isAdmin = req.body.isAdmin;
+    user.password = req.body.password || user.password;
+    user.issuperAdmin = req.body.issuperAdmin;
+    user.ice = req.body.ice;
+    user.tel = req.body.tel;
 
     const updatedUser = await user.save();
+    console.log("updateduser", updateUser);
 
     res.json({
       _id: updatedUser._id,
       name: updatedUser.name,
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
+      issuperAdmin: updatedUser.issuperAdmin,
+      adress: updatedUser.adress,
+      ice: updatedUser.ice,
+      tel: updatedUser.tel,
     });
   } else {
     res.status(404);

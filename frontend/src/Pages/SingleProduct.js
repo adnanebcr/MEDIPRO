@@ -40,83 +40,83 @@ const SingleProduct = ({ match }) => {
             <Col md={5} className="text-left my-3">
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3>{product.name}</h3>
+                  <h4>{product.name}</h4>
                   <p>{product.type}</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>
-                    <strong className="green-text">{product.gammes}</strong>
-                  </p>
+                  <span className="green-text1">{product.gammes}</span>
                 </ListGroup.Item>
                 <ListGroup.Item>{product.description}</ListGroup.Item>
               </ListGroup>
             </Col>
           </Row>
-          <Row>
-            <Col lg={12}>
-              <div className="descriptionarea mb-5">
-                <Tab.Container defaultActiveKey="Proprietes">
-                  <Row>
-                    <Col sm={4}>
-                      <Nav className="flex-column">
-                        <Nav.Item>
-                          <Nav.Link eventKey="Proprietes" className="nav">
-                            <h5>Propriétés</h5>
-                          </Nav.Link>
-                        </Nav.Item>
-
-                        <Nav.Item>
-                          <Nav.Link eventKey="Conseil" className="nav">
-                            <h5>Conseils d'utilisation</h5>
-                          </Nav.Link>
-                        </Nav.Item>
-
-                        <Nav.Item>
-                          <Nav.Link eventKey="Precautions" className="nav">
-                            <h5>Précautions</h5>
-                          </Nav.Link>
-                        </Nav.Item>
-                      </Nav>
-                    </Col>
-                    <Col sm={8}>
-                      <Tab.Content>
-                        <Tab.Pane eventKey="Proprietes">
-                          <h5 className="green-text text-left product-title">
-                            <strong>Propriétés :</strong>
-                          </h5>
-                          <p>{product.proprietes}</p>
-                          <p>{product.proprietes2}</p>
-                          <p>{product.proprietes3}</p>
-                        </Tab.Pane>
-
-                        <Tab.Pane eventKey="Conseil">
-                          <h5 className="green-text text-left product-title">
-                            <strong>Conseils d'utilisation :</strong>
-                          </h5>
-                          <p>{product.conseil}</p>
-                          <p>{product.conseil2}</p>
-                          <p>{product.conseil3}</p>
-                        </Tab.Pane>
-
-                        <Tab.Pane eventKey="Precautions">
-                          <h5 className="green-text text-left product-title">
-                            <strong>Précautions :</strong>
-                          </h5>
-
-                          <p>{product.precautions1}</p>
-
-                          <p>{product.precautions2}</p>
-
-                          <p>{product.precautions3}</p>
-                        </Tab.Pane>
-                      </Tab.Content>
-                    </Col>
-                  </Row>
-                </Tab.Container>
-              </div>
-            </Col>
-          </Row>
         </Card>
+        <Row className="mt-5">
+          <Col lg={12}>
+            <div className="descriptionarea mb-5">
+              <Tab.Container defaultActiveKey="Proprietes">
+                <Row>
+                  <Col sm={4}>
+                    <Nav variant="tabs" className="flex-column">
+                      <Nav.Item>
+                        <Nav.Link eventKey="Proprietes" className="nav">
+                          <h5 className="green-text1">Propriétés</h5>
+                        </Nav.Link>
+                      </Nav.Item>
+
+                      <Nav.Item>
+                        <Nav.Link eventKey="Conseil" className="nav">
+                          <h5 className="green-text1">
+                            Conseils d'utilisation
+                          </h5>
+                        </Nav.Link>
+                      </Nav.Item>
+
+                      <Nav.Item>
+                        <Nav.Link eventKey="Precautions" className="nav">
+                          <h5 className="green-text1">Précautions</h5>
+                        </Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                  </Col>
+                  <Col sm={8}>
+                    <Tab.Content>
+                      <Tab.Pane eventKey="Proprietes">
+                        <h5 className="green-text1 text-left product-title mb-3">
+                          <strong>Propriétés :</strong>
+                        </h5>
+                        <p>{product.proprietes}</p>
+                        <p>{product.proprietes2}</p>
+                        <p>{product.proprietes3}</p>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="Conseil">
+                        <h5 className="green-text1 text-left product-title mb-3">
+                          <strong>Conseils d'utilisation :</strong>
+                        </h5>
+                        <p>{product.conseil}</p>
+                        <p>{product.conseil2}</p>
+                        <p>{product.conseil3}</p>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="Precautions">
+                        <h5 className="green-text1 text-left product-title mb-3">
+                          <strong>Précautions :</strong>
+                        </h5>
+
+                        <p>{product.precautions1}</p>
+
+                        <p>{product.precautions2}</p>
+
+                        <p>{product.precautions3}</p>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Col>
+                </Row>
+              </Tab.Container>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </div>
   );

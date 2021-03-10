@@ -26,14 +26,12 @@ const ProductsPage = ({ match, history }) => {
   const [Filters, setFilters] = useState({
     gammes: [],
   });
-  console.log(Filters);
-  const newProducts = products.filter(function (products) {
-    if (products.gammes === { Filters }) {
-      return products;
-    }
-  });
-
-  console.log("newArray", newProducts);
+  const newFilter = Filters.gammes;
+  console.log("newFilter", newFilter);
+  console.log(newFilter);
+  const newProducts = products.filter(
+    (product) => product.gammes === newFilter
+  );
   const showFilteredResults = (filters) => {
     const variables = {
       filters: filters,
@@ -46,7 +44,6 @@ const ProductsPage = ({ match, history }) => {
     newFilters[category] = filters;
     showFilteredResults(newFilters);
     setFilters(newFilters);
-    console.log("filters", newFilters);
   };
   return (
     <div id="Products">
@@ -61,9 +58,16 @@ const ProductsPage = ({ match, history }) => {
           <Col lg="3" className='shadow p-3 mb-5 bg-white rounded"'>
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Col lg={12} xs={24}>
-              <R1
-                list={gammes}
-                handleFilters={(filters) => handleFilters(filters, "gammes")}
+              <Route
+                render={({ history }) => (
+                  <R1
+                    history={history}
+                    list={gammes}
+                    handleFilters={(filters) =>
+                      handleFilters(filters, "gammes")
+                    }
+                  />
+                )}
               />
             </Col>
           </Col>
@@ -72,9 +76,18 @@ const ProductsPage = ({ match, history }) => {
               <Loader />
             ) : error ? (
               <Message variant="danger">{error}</Message>
-            ) : (
+            ) : // eslint-disable-next-line eqeqeq
+            newFilter == "" ? (
               <Row>
                 {products.map((product) => (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
+                    <Product product={product} />
+                  </Col>
+                ))}
+              </Row>
+            ) : (
+              <Row>
+                {newProducts.map((product) => (
                   <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
                     <Product product={product} />
                   </Col>

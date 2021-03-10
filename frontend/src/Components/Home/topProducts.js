@@ -29,7 +29,7 @@ const ProductCarousel = () => {
   return (
     <>
       <div>
-        <h1 className="text-center my-5">Nos produits phares</h1>
+        <h1 className="text-center mt-5 mb-3">Nos produits phares</h1>
       </div>
       {loading ? (
         <Loader />
@@ -40,15 +40,17 @@ const ProductCarousel = () => {
           <Carousel breakPoints={breakPoints}>
             {products.map((product) => (
               <Item>
-                <div>
-                  <Link to={`/product/${product._id}`}>
+                <Link to={`/product/${product._id}`}>
+                  <div>
                     <img
                       id="imgCarousel"
                       src={product.image}
                       alt={product.name}
                     ></img>
-                  </Link>
-                </div>
+
+                    <h4 className="text-center">{product.name}</h4>
+                  </div>
+                </Link>
               </Item>
             ))}
           </Carousel>

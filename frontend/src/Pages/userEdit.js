@@ -16,12 +16,12 @@ const UserEditScreen = ({ match, history }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [issuperAdmin, setIssuperAdmin] = useState(false);
   const [password, setPassword] = useState("");
+  const [ice, setICE] = useState("");
 
   const dispatch = useDispatch();
 
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
-
   const userUpdate = useSelector((state) => state.userUpdate);
   const {
     loading: loadingUpdate,
@@ -42,13 +42,24 @@ const UserEditScreen = ({ match, history }) => {
         setIsAdmin(user.isAdmin);
         setIssuperAdmin(user.issuperAdmin);
         setPassword(user.password);
+        setICE(user.ice);
       }
     }
   }, [dispatch, history, userId, user, successUpdate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(updateUser({ _id: userId, name, email, isAdmin, issuperAdmin }));
+    dispatch(
+      updateUser({
+        _id: userId,
+        name,
+        email,
+        isAdmin,
+        issuperAdmin,
+        password,
+        ice,
+      })
+    );
   };
 
   return (
@@ -87,12 +98,22 @@ const UserEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId="password">
-              <Form.Label>Email password</Form.Label>
+              <Form.Label> password</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="ice">
+              <Form.Label>ICE</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter ICE"
+                value={ice}
+                onChange={(e) => setICE(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
