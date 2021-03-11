@@ -50,7 +50,7 @@ const ProductsPage = ({ match, history }) => {
       <C1 id="Carousel" />
       <h2 className="h1-responsive font-weight-bold text-center my-5">
         Des produits adaptés a tous{" "}
-        <span className="green-text">vos besoins</span>
+        <span className="green-text2">vos besoins</span>
       </h2>
 
       <>

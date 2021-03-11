@@ -95,6 +95,7 @@ app.use("/Signup", (req, res) => {
 
 app.use("/Cart", (req, res) => {
   let Data = req.body;
+  let table = Data.items.map();
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -108,7 +109,7 @@ app.use("/Cart", (req, res) => {
     subject: "Nouvelle Commande", // Subject line
     text: `Nouvelle Commande de : ${Data.clientname}`, // plain text body
     html: `
-                <h2>Informations</h2>
+                <h2>Nouvelle commande</h2>
                 <p>
                   <strong>Nom et prénom:</strong> ${Data.clientname}
                 </p>
@@ -116,8 +117,29 @@ app.use("/Cart", (req, res) => {
                   <strong> adresse mail : </strong>
                   ${Data.mail}
                 </p>
+                <Table bordered hover responsive">
+                    <thead>
+                      <tr>
+                        <th>Designation</th>
+                        <th>PPH</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${Data.items.map((item, index)} => (
+                        <tr key={item._id}>
+                          <td className="text-left">${item.designation}</td>
+                          <td>${item.PPH}</td>
+
+                          <td>${item.qty}</td>
+                          <td>${(item.qty * item.PPH).toFixed(2)} MAD</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+
     `, // html body
-    attachements: [{ filename }],
   };
 
   let info = transporter.sendMail(mailOptions, function (err, info) {

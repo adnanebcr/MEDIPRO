@@ -11,13 +11,20 @@ h6 {
   font-family: "Shippori Mincho B1", serif;
 }
 
+.black-text {
+  color: black;
+}
 /* Navbar Section */
 
 #headerComponent .App-logo {
   width: 150px;
   max-height: fit-content;
 }
+/* Home Section */
 
+.Homeimg {
+  width: 80%;
+}
 /* Hero Section */
 
 #hero-title {
@@ -25,7 +32,13 @@ h6 {
   font-size: 130px;
 }
 /* First Page */
+.FirstTitle {
+  font-family: "Shippori Mincho B1", serif;
+}
 
+.Firstpara {
+  font-size: 20px;
+}
 .descimg {
   width: 200px;
 }
@@ -44,7 +57,16 @@ h6 {
 .green-text1 {
   color: #50b614;
 }
+.green-text2 {
+  color: #50b614;
+  font-family: "Shippori Mincho B1", serif;
+}
+.white-text {
+  color: white;
+}
 
+.TopContainer {
+}
 .title {
   font-family: "Shippori Mincho B1", serif;
 }
@@ -56,6 +78,11 @@ p {
 .about-img {
   width: 80%;
   border-radius: 10%;
+}
+.about-img2 {
+  width: 90%;
+  border-radius: 10%;
+  margin-top: 30px;
 }
 /* Contact Section */
 
@@ -165,4 +192,8 @@ th {
 
 .product-name {
   font-family: "Shippori Mincho B1", serif;
+}
+
+#img1 {
+  width: 100px;
 }

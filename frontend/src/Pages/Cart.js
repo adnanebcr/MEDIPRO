@@ -98,7 +98,7 @@ const PlaceOrderScreen = ({ history }) => {
                 </p>
                 <p>
                   <strong>Telephone : </strong>
-                  {user.userInfo.phone}
+                  {user.userInfo.tel}
                 </p>
 
                 <p>
