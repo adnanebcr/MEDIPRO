@@ -10,7 +10,7 @@ function RadioBox(props) {
     props.list.map((value) => (
       <div>
         <Radio key={value._id} value={`${value.name}`}>
-          <strong>{value.name}</strong>
+          <strong> {value.name}</strong>
         </Radio>
       </div>
     ));

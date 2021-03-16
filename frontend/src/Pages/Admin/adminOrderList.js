@@ -1,33 +1,12 @@
-// import { useSelector } from 'react-redux'
-// import React, {  useEffect } from 'react'
-
-// const Historique = ({history}) => {
-
-//       const userLogin = useSelector((state) => state.userlogin)
-//   const { userInfo } = userLogin
-// useEffect(() => {
-//     if (!userInfo) {
-//       history.push('/Signin')
-//     }
-//   })
-//     return (
-//         <div>
-//             Historique Commandes :
-//         </div>
-//     )
-// }
-
-// export default Historique
-
 import React, { useEffect } from "react";
 import { Table, Button, Row, Col } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../Components/Message";
-import Loader from "../Components/Loader";
-import { getUserDetails } from "../Actions/userActions";
-import { listOrders } from "../Actions/orderActions";
-import { USER_UPDATE_PROFILE_RESET } from "../Constants/userConstants";
+import Message from "../../Components/Message";
+import Loader from "../../Components/Loader";
+import { getUserDetails } from "../../Actions/userActions";
+import { listOrders } from "../../Actions/orderActions";
+import { USER_UPDATE_PROFILE_RESET } from "../../Constants/userConstants";
 import { Container } from "react-bootstrap";
 
 const ProfileScreen = ({ location, history }) => {
@@ -53,10 +32,6 @@ const ProfileScreen = ({ location, history }) => {
         dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
         dispatch(listOrders());
-      } else {
-        // setName(user.name)
-        // setEmail(user.email)
-        // setPassword(user.password)
       }
     }
   }, [dispatch, history, userInfo, user, success]);

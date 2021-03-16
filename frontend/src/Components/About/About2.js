@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Row, Col, Container } from "react-bootstrap";
-import medipro01 from "../Assets/medipro01.jpg";
+import medipro01 from "../../Assets/medipro01.jpg";
 
 const About2 = () => {
   return (

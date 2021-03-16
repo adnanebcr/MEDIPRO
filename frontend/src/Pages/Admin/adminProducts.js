@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Table, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../Components/Message";
-import Loader from "../Components/Loader";
+import Message from "../../Components/Message";
+import Loader from "../../Components/Loader";
 import {
   listProducts,
   deleteProduct,
   createProduct,
-} from "../Actions/productActions";
+} from "../../Actions/productActions";
 import { Container } from "react-bootstrap";
-import "../App.css";
+import "../../App.css";
 
 const ProductList = ({ history, match }) => {
   const dispatch = useDispatch();

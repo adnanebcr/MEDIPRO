@@ -13,11 +13,9 @@ const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-  console.log("cart", cart);
-  const user = useSelector((state) => state.userlogin);
-  console.log("user", user);
 
-  console.log(cart);
+  const user = useSelector((state) => state.userlogin);
+
   //   Calculate prices
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
@@ -57,11 +55,10 @@ const PlaceOrderScreen = ({ history }) => {
       clientname: user.userInfo.name,
       mail: user.userInfo.email,
       items: cart.cartItems,
-      itemsprice: cart.itemsPrice,
+      itemsPrice: cart.itemsPrice,
       taxPrice: cart.taxPrice,
       totalPrice: cart.totalPrice,
     };
-
     axios
       .post("/Cart", Data)
       .then((res) => {
@@ -76,7 +73,7 @@ const PlaceOrderScreen = ({ history }) => {
         console.log("message non envoyé");
       });
   };
-  console.log("userInfo,", user.userInfo);
+
   return (
     <>
       <Container fluid className="my-5">

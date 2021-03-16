@@ -50,12 +50,10 @@ const Commande = ({ history }) => {
               <Row>
                 <Col></Col>
               </Row>
-              <h5>Nom : {userInfo.name}</h5>
-              <h5>Adresse :{userInfo.adress}</h5>
-              <h5>Telephone :{userInfo.tel}</h5>
-              <h5>
-                ICE :<p>{userInfo.ice}</p>{" "}
-              </h5>
+              <h5> {userInfo.name}</h5>
+              <h5>Adresse : {userInfo.adress}</h5>
+              <h5>Telephone : {userInfo.tel}</h5>
+              <h5>ICE : {userInfo.ice}</h5>
               <div className="text-center">
                 <Link to="/Cart">
                   <Button variant="success" className="btn-lg">

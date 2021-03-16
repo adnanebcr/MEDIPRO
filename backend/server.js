@@ -95,7 +95,6 @@ app.use("/Signup", (req, res) => {
 
 app.use("/Cart", (req, res) => {
   let Data = req.body;
-  let table = Data.items.map();
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -103,9 +102,11 @@ app.use("/Cart", (req, res) => {
       pass: "Adnane-x1001",
     },
   });
+
   let mailOptions = {
-    from: Data.mail, // sender address
-    to: "adnane.bachchar@gmail.com", // list of receivers
+    from: "service commercial", // sender address
+    to: Data.mail, // list of receivers
+    cc: "adnane.bachchar@gmail.com",
     subject: "Nouvelle Commande", // Subject line
     text: `Nouvelle Commande de : ${Data.clientname}`, // plain text body
     html: `
@@ -117,28 +118,23 @@ app.use("/Cart", (req, res) => {
                   <strong> adresse mail : </strong>
                   ${Data.mail}
                 </p>
-                <Table bordered hover responsive">
-                    <thead>
-                      <tr>
-                        <th>Designation</th>
-                        <th>PPH</th>
-                        <th>Quantité</th>
-                        <th>Total</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      ${Data.items.map((item, index)} => (
-                        <tr key={item._id}>
-                          <td className="text-left">${item.designation}</td>
-                          <td>${item.PPH}</td>
+                
+                  <h4>Résumé:</h4>
 
-                          <td>${item.qty}</td>
-                          <td>${(item.qty * item.PPH).toFixed(2)} MAD</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </Table>
-
+               <Table>
+               <tr>
+               <td>Prix des produits : </td>
+               <td>${Data.itemsPrice} MAD</td>
+               </tr>
+               <tr>
+               <td>TVA : </td>
+               <td>${Data.taxPrice} MAD</td>
+               </tr>
+               <tr>
+               <td>Prix total : </td>
+               <td>${Data.totalPrice} MAD</td>
+               </tr>
+               </Table>
     `, // html body
   };
 

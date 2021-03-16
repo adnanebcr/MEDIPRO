@@ -1,13 +1,15 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../Components/Message";
-import Loader from "../Components/Loader";
-import FormContainer from "../Components/FormContainer";
-import { listProductDetails, updateProduct } from "../Actions/productActions";
-import { PRODUCT_UPDATE_RESET } from "../Constants/productsConstants";
+import Message from "../../Components/Message";
+import Loader from "../../Components/Loader";
+import FormContainer from "../../Components/FormContainer";
+import { PRODUCT_UPDATE_RESET } from "../../Constants/productsConstants";
+import {
+  listProductDetails,
+  updateProduct,
+} from "../../Actions/productActions";
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;

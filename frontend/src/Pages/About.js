@@ -1,9 +1,8 @@
 import React from "react";
 import img1 from "../Assets/img1.jpg";
 import "../App.css";
-import medipro01 from "../Assets/medipro01.jpg";
 import image1 from "../Assets/img/image1.jpg";
-import FirstSection from "../Components/About2";
+import FirstSection from "../Components/About/About2";
 
 import { Row, Col, Container } from "react-bootstrap";
 

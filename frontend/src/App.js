@@ -12,17 +12,16 @@ import Commande from "./Pages/Commande";
 import Profile from "./Pages/profile";
 import Historique from "./Pages/Historique";
 import FirstPage from "./Pages/FirstPage";
-import userList from "./Pages/userList";
-import UserEditScreen from "./Pages/userEdit";
+import userList from "./Pages/Admin/userList";
+import UserEditScreen from "./Pages/Admin/userEdit";
 import Register from "./Pages/Register";
-import productList from "./Pages/adminProducts";
-import productEditScreen from "./Pages/productEditAdmin";
+import productList from "./Pages/Admin/adminProducts";
+import productEditScreen from "./Pages/Admin/productEditAdmin";
 import Fiches from "./Pages/Fiches";
 import SingleFiche from "./Pages/SingleFiche";
-import PageTest from "./Pages/PAgeTest";
 import Cart from "./Pages/Cart";
 import OrderScreen from "./Pages/orderScreen";
-import orderList from "./Pages/adminOrderList";
+import orderList from "./Pages/Admin/adminOrderList";
 
 function App() {
   return (
@@ -49,7 +48,6 @@ function App() {
         <Route path="/Gammes/:keyword" component={Products} exact />
         <Route path="/Product/:id" component={SingleProduct} />
         <Route path="/Contact" component={Contact} />
-        <Route path="/Test" component={PageTest} />
         <Route path="/SignIn" component={SignIn} />
         <Route path="/cart" component={Cart} />
         <Route path="/SignUp" component={SignUp} />
