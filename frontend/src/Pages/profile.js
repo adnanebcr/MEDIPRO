@@ -37,7 +37,7 @@ const ProfileScreen = ({ location, history }) => {
     if (!userInfo) {
       history.push("/SignIn");
     }
-    if (!user.name) {
+    if (!user.name || success) {
       dispatch({ type: USER_UPDATE_PROFILE_RESET });
       dispatch(getUserDetails("profile"));
     } else {
@@ -47,7 +47,7 @@ const ProfileScreen = ({ location, history }) => {
       setAdress(user.adress);
       setTel(user.tel);
     }
-  }, [dispatch, history, userInfo, user]);
+  }, [dispatch, history, userInfo, user, success]);
 
   const submitHandler = (e) => {
     e.preventDefault();

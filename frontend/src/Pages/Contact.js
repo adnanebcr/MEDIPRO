@@ -137,7 +137,7 @@ export default class Contact extends Component {
                               name="name"
                               value={this.state.name}
                               onChange={this.handleName}
-                              className="white-text"
+                              className="black-text"
                             />
                           </div>
                         </MDBCol>
@@ -150,7 +150,7 @@ export default class Contact extends Component {
                               name="email"
                               value={this.state.email}
                               onChange={this.handleEmail}
-                              className="white-text"
+                              className="black-text"
                             />
                           </div>
                         </MDBCol>
@@ -165,7 +165,7 @@ export default class Contact extends Component {
                               name="phone"
                               value={this.state.phone}
                               onChange={this.handlePhone}
-                              className="white-text"
+                              className="black-text"
                             />
                           </div>
                         </MDBCol>
@@ -178,7 +178,7 @@ export default class Contact extends Component {
                               name="societe"
                               value={this.state.societe}
                               onChange={this.handleSociete}
-                              className="white-text"
+                              className="black-text"
                             />
                           </div>
                         </MDBCol>
@@ -193,15 +193,19 @@ export default class Contact extends Component {
                               name="message"
                               value={this.state.message}
                               onChange={this.handleMessage}
-                              className="white-text"
+                              className="black-text"
                             />
                             <MDBBtn
                               type="submit"
                               rounded
-                              color="blue"
+                              color="primary"
                               onClick={this.toggle}
                             >
-                              <MDBIcon icon="paper-plane" /> Envoyer
+                              <MDBIcon
+                                icon="paper-plane"
+                                className="white-text"
+                              />{" "}
+                              <span className="white-text">Envoyer</span>
                             </MDBBtn>
                             <MDBModal
                               isOpen={this.state.modal}
