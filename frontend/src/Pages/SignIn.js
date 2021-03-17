@@ -52,7 +52,7 @@ const SignIn = ({ location, history }) => {
                 {loading && <Loader />}
                 <hr className="hr-light" />
                 <Form onSubmit={submitHandler}>
-                  <Form.Group controlId="type">
+                  <Form.Group controlId="identifiant">
                     <Form.Label>
                       <h5>Votre identifiant</h5>
                     </Form.Label>
@@ -64,7 +64,7 @@ const SignIn = ({ location, history }) => {
                     ></Form.Control>
                   </Form.Group>
 
-                  <Form.Group controlId="type">
+                  <Form.Group controlId="password">
                     <Form.Label>
                       <h5>Mot de passe</h5>{" "}
                     </Form.Label>

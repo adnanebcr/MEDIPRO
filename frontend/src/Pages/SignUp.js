@@ -138,7 +138,7 @@ class ClassicFormPage extends React.Component {
                 <Card.Body>
                   <hr className="hr-light" />
                   <Form onSubmit={this.formSubmit}>
-                    <Form.Group controlId="type">
+                    <Form.Group controlId="name">
                       <Form.Label>
                         <h5>Votre Nom et prénom</h5>
                       </Form.Label>
@@ -149,7 +149,7 @@ class ClassicFormPage extends React.Component {
                         onChange={this.handleName}
                       ></Form.Control>
                     </Form.Group>
-                    <Form.Group controlId="type">
+                    <Form.Group controlId="password">
                       <Form.Label>
                         <h5>Votre Mot de passe</h5>
                       </Form.Label>
@@ -160,7 +160,7 @@ class ClassicFormPage extends React.Component {
                         onChange={this.handlePassword}
                       ></Form.Control>
                     </Form.Group>
-                    <Form.Group controlId="type">
+                    <Form.Group controlId="mail">
                       <Form.Label>
                         <h5>Votre adresse mail</h5>
                       </Form.Label>
@@ -171,7 +171,7 @@ class ClassicFormPage extends React.Component {
                         onChange={this.handleEmail}
                       ></Form.Control>
                     </Form.Group>
-                    <Form.Group controlId="type">
+                    <Form.Group controlId="adress">
                       <Form.Label>
                         <h5>Votre adresse postale</h5>
                       </Form.Label>
@@ -182,7 +182,7 @@ class ClassicFormPage extends React.Component {
                         onChange={this.handleAdress}
                       ></Form.Control>
                     </Form.Group>
-                    <Form.Group controlId="type">
+                    <Form.Group controlId="phone">
                       <Form.Label>
                         <h5>Votre téléphone</h5>
                       </Form.Label>
