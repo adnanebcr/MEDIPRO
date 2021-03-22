@@ -29,14 +29,14 @@ app.use("/Contact", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "adnane.bachchar@gmail.com",
-      pass: "Adnane-x1001",
+      user: "testmedipro@gmail.com",
+      pass: "test@1234",
     },
   });
   let mailOptions = {
     from: Data.mail, // sender address
     to: "adnane.bachchar@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
+    subject: "Hello3 ✔", // Subject line
     text: `message de ${Data.name}`, // plain text body
     html: `<h3>informations<h3>
         <ul>
@@ -63,8 +63,8 @@ app.use("/Signup", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "adnane.bachchar@gmail.com",
-      pass: "Adnane-x1001",
+      user: "testmedipro@gmail.com",
+      pass: "test@1234",
     },
   });
   let mailOptions = {
@@ -98,8 +98,8 @@ app.use("/Cart", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "adnane.bachchar@gmail.com",
-      pass: "Adnane-x1001",
+      user: "testmedipro@gmail.com",
+      pass: "test@1234",
     },
   });
 
