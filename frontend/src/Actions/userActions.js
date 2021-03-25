@@ -49,7 +49,6 @@ export const login = (email, password) => async (dispatch) => {
     });
 
     localStorage.setItem("userInfo", JSON.stringify(data));
-    console.log("data", data);
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAIL,
@@ -261,7 +260,6 @@ export const deleteUser = (id) => async (dispatch, getState) => {
 };
 
 export const updateUser = (user) => async (dispatch, getState) => {
-  console.log("user3", user);
   try {
     dispatch({
       type: USER_UPDATE_REQUEST,

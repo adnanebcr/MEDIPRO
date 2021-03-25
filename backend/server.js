@@ -40,6 +40,7 @@ app.use("/Contact", (req, res) => {
     text: `message de ${Data.name}`, // plain text body
     html: `<h3>informations<h3>
         <ul>
+        <li>Nom : ${Data.name}</li>
         <li>téléphone : ${Data.phone}</li>
         <li>email : ${Data.email}</li>
         <li>société : ${Data.societe}</li>

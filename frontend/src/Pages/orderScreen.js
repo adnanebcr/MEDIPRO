@@ -14,7 +14,6 @@ const PlaceOrderScreen = ({ match }) => {
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
-  console.log("ordeer", order);
 
   useEffect(() => {
     dispatch(getOrderDetails(orderId));
@@ -55,7 +54,7 @@ const PlaceOrderScreen = ({ match }) => {
                             <td>{item.PPH}</td>
 
                             <td>{item.qty}</td>
-                            <td>{item.qty * item.PPH} MAD</td>
+                            <td>{(item.qty * item.PPH).toFixed(2)} MAD</td>
                           </tr>
                         ))}
                       </tbody>

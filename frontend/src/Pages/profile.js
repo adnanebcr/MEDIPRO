@@ -27,7 +27,6 @@ const ProfileScreen = ({ location, history }) => {
 
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, user } = userDetails;
-  console.log(user);
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
   const userlogin = useSelector((state) => state.userlogin);
@@ -70,7 +69,6 @@ const ProfileScreen = ({ location, history }) => {
             <h2>Votre profil</h2>
           </MDBCardHeader>
           {message && <Message variant="danger">{message}</Message>}
-
           {success && (
             <Message variant="success" className="text-center">
               Votre Profil est bien modifié

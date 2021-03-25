@@ -9,7 +9,7 @@ const gammes = [
   },
   {
     _id: 3,
-    name: "Stress-Anxiété-Insomnie",
+    name: "Stress,Sommeil et anxieté",
   },
   {
     _id: 4,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Radio } from "antd";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 function RadioBox(props) {
   const [Value, setValue] = useState("0");
@@ -33,6 +33,11 @@ function RadioBox(props) {
             {renderRadioBox()}
           </Radio.Group>
         </Card.Body>
+        <div className="text-center pb-3">
+          <a href="/Products">
+            <Button variant="success">Réinitialiser</Button>
+          </a>
+        </div>
       </Card>
     </div>
   );

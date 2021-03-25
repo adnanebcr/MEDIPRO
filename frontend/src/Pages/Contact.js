@@ -82,7 +82,6 @@ export default class Contact extends Component {
       societe: this.state.societe,
       message: this.state.message,
     };
-    console.log(Data);
     axios
       .post("/Contact", Data)
       .then((res) => {
