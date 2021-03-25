@@ -120,7 +120,28 @@ app.use("/Cart", (req, res) => {
                 </p>
                 
                   <h4>Résumé:</h4>
-
+              <Table style="float:left ">
+              <thead>
+                        <tr>
+                          <th>Designation</th>
+                          <th>PPH</th>
+                          <th>Quantité</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         ${Data.items.map(
+                           (item) => `
+                          <tr key="${item._id}">
+                            <td>${item.designation}</td>
+                            <td>${item.PPH}</td>
+                            <td>${item.qty}</td>
+                            <td>${(item.qty * item.PPH).toFixed(2)} MAD</td>
+                          </tr>
+                        `
+                         )}
+                      </tbody>
+              </Table>
                <Table>
                <tr>
                <td>Prix des produits : </td>

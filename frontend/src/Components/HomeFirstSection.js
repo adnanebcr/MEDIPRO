@@ -7,7 +7,7 @@ const About2 = () => {
   return (
     <div>
       <>
-        <Container className=" mt-5">
+        <Container className=" my-5">
           <Row>
             <Col lg={6} sm={12}>
               {" "}

@@ -123,7 +123,7 @@ export default class Contact extends Component {
                 <MDBCol lg="8">
                   <form onSubmit={this.formSubmit}>
                     <MDBCardBody className="form">
-                      <h3 className="mt-4 white-text">
+                      <h3 className="mt-4 ">
                         <MDBIcon icon="envelope" className="pr-2" />
                         Contactez-nous .
                       </h3>
@@ -133,7 +133,7 @@ export default class Contact extends Component {
                             <MDBInput
                               type="text"
                               id="form-contact-name"
-                              label=" Nom"
+                              placeHolder=" Nom"
                               name="name"
                               value={this.state.name}
                               onChange={this.handleName}
@@ -146,7 +146,7 @@ export default class Contact extends Component {
                             <MDBInput
                               type="email"
                               id="form-contact-email"
-                              label=" Adresse mail "
+                              placeHolder=" Adresse mail "
                               name="email"
                               value={this.state.email}
                               onChange={this.handleEmail}
@@ -161,7 +161,7 @@ export default class Contact extends Component {
                             <MDBInput
                               type="text"
                               id="form-contact-phone"
-                              label=" Téléphone"
+                              placeHolder=" Téléphone"
                               name="phone"
                               value={this.state.phone}
                               onChange={this.handlePhone}
@@ -174,7 +174,7 @@ export default class Contact extends Component {
                             <MDBInput
                               type="text"
                               id="form-contact-company"
-                              label=" Société (facultatif)"
+                              placeHolder=" Société (facultatif)"
                               name="societe"
                               value={this.state.societe}
                               onChange={this.handleSociete}
@@ -189,7 +189,7 @@ export default class Contact extends Component {
                             <MDBInput
                               type="textarea"
                               id="form-contact-message"
-                              label=" Message"
+                              placeHolder=" Message"
                               name="message"
                               value={this.state.message}
                               onChange={this.handleMessage}
@@ -201,11 +201,8 @@ export default class Contact extends Component {
                               color="primary"
                               onClick={this.toggle}
                             >
-                              <MDBIcon
-                                icon="paper-plane"
-                                className="white-text"
-                              />{" "}
-                              <span className="white-text">Envoyer</span>
+                              <MDBIcon icon="paper-plane" className="" />{" "}
+                              <span className="">Envoyer</span>
                             </MDBBtn>
                             <MDBModal
                               isOpen={this.state.modal}
@@ -228,29 +225,32 @@ export default class Contact extends Component {
                 </MDBCol>
                 <MDBCol lg="4">
                   <MDBCardBody className="contact text-center h-100 ">
-                    <h3 className="white-text my-4 pb-2">Nous contacter</h3>
+                    <h3 className=" my-4 pb-2">Nous contacter</h3>
                     <ul className="text-lg-left list-unstyled ml-4">
                       <li>
-                        <p className="white-text">
+                        <p className="">
                           <MDBIcon icon="map-marker-alt" className=" pr-2" />
                           100, rue Brahim Annakhai – Mâarif 20370 – Casablanca
                         </p>
                       </li>
                       <li>
-                        <p className="white-text">
+                        <p className="">
                           <MDBIcon icon="phone" className=" pr-2" />+ 212 522
                           980 772
                         </p>
                       </li>
                       <li>
-                        <p className="white-text">
+                        <p className="">
                           <MDBIcon icon="envelope" className=" pr-2" />
                           contact@example.com
                         </p>
                       </li>
                     </ul>
                     <hr className="hr-light my-4" />
-                    <ul className="list-inline text-center list-unstyled">
+                    <ul className="list-inline text- list-unstyled">
+                      <li>
+                        <h5>Suivez nous ! </h5>
+                      </li>
                       <li className="list-inline-item">
                         <a
                           href="https://www.facebook.com/mediprogroupe"
@@ -275,6 +275,7 @@ export default class Contact extends Component {
               </MDBRow>
             </MDBCard>
           </MDBContainer>
+          <div className="my-5"></div>
         </MDBView>
       </section>
     );

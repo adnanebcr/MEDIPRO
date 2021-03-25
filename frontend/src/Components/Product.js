@@ -13,7 +13,7 @@ const Product = ({ product }) => {
 
       <Card.Body>
         <Card.Title as="div">
-          <h4 className="product-name">{product.name}</h4>
+          <h6 className="product-name">{product.name}</h6>
         </Card.Title>
         <p>
           <span className="green-text1">{product.type}</span>

@@ -87,12 +87,7 @@ p {
 /* Contact Section */
 
 #contact-section .view {
-  background: rgb(126, 138, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(126, 138, 255, 1) 0%,
-    rgba(158, 255, 140, 1) 100%
-  );
+  background-image: url("./Assets/bg1.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -150,7 +145,7 @@ p {
 }
 
 #contact-section .icon {
-  color: #fff !important;
+  color: black !important;
 }
 
 /*Commande section*/
@@ -196,4 +191,19 @@ th {
 
 #img1 {
   width: 100px;
+}
+
+.Footer {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.App-logo {
+  width: 150px;
+  max-height: fit-content;
+}
+
+.Footer h6:hover {
+  color: #50b614;
+  cursor: pointer;
 }

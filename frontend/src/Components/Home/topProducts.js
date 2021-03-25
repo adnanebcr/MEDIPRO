@@ -30,7 +30,7 @@ const ProductCarousel = () => {
 
   return (
     <>
-      <Container fluid className="TopContainer">
+      <Container fluid className="TopContainer my-5">
         <Card className=" shadow p-3 mb-5 bg-white my-3 p-3 rounded">
           <div>
             <h1 className="text-center mt-5 mb-3 green-text1">
