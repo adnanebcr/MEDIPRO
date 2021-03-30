@@ -20,6 +20,11 @@ function RadioBox(props) {
     props.handleFilters(event.target.value);
   };
 
+  const handleChange2 = (event) => {
+    setValue(event.target.value);
+    props.handleFilters(event.target.value);
+  };
+
   return (
     <div>
       <Card className="my-3">

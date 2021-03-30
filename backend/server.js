@@ -121,7 +121,8 @@ app.use("/Cart", (req, res) => {
                 </p>
                 
                   <h4>Résumé:</h4>
-              <Table style="float:left ">
+              <Table style="border: 1px solid black;
+  border-collapse: collapse; ">
               <thead>
                         <tr>
                           <th>Designation</th>

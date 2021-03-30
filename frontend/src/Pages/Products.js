@@ -12,6 +12,7 @@ import { gammes } from "../Components/Datas";
 import SearchBox from "../Components/Searchbox";
 import { Route } from "react-router-dom";
 import R1 from "../Components/radiobox";
+import { Container } from "react-bootstrap";
 
 const ProductsPage = ({ match, history }) => {
   const dispatch = useDispatch();
@@ -52,48 +53,52 @@ const ProductsPage = ({ match, history }) => {
       </h2>
 
       <>
-        <Row>
-          <Col lg="3" className='shadow p-3 mb-5 bg-white rounded"'>
-            <Route render={({ history }) => <SearchBox history={history} />} />
-            <Col lg={12} xs={24}>
+        <Container fluid>
+          <Row>
+            <Col lg="3" className='shadow p-3 mb-5 bg-white rounded"'>
               <Route
-                render={({ history }) => (
-                  <R1
-                    history={history}
-                    list={gammes}
-                    handleFilters={(filters) =>
-                      handleFilters(filters, "gammes")
-                    }
-                  />
-                )}
+                render={({ history }) => <SearchBox history={history} />}
               />
+              <Col lg={12} xs={24}>
+                <Route
+                  render={({ history }) => (
+                    <R1
+                      history={history}
+                      list={gammes}
+                      handleFilters={(filters) =>
+                        handleFilters(filters, "gammes")
+                      }
+                    />
+                  )}
+                />
+              </Col>
             </Col>
-          </Col>
-          <Col lg="8">
-            {loading ? (
-              <Loader />
-            ) : error ? (
-              <Message variant="danger">{error}</Message>
-            ) : // eslint-disable-next-line eqeqeq
-            newFilter == "" ? (
-              <Row>
-                {products.map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={6} xl={3}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-              </Row>
-            ) : (
-              <Row>
-                {newProducts.map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-              </Row>
-            )}
-          </Col>
-        </Row>
+            <Col lg="9">
+              {loading ? (
+                <Loader />
+              ) : error ? (
+                <Message variant="danger">{error}</Message>
+              ) : // eslint-disable-next-line eqeqeq
+              newFilter == "" ? (
+                <Row>
+                  {products.map((product) => (
+                    <Col key={product._id} sm={12} md={6} lg={6} xl={3}>
+                      <Product product={product} />
+                    </Col>
+                  ))}
+                </Row>
+              ) : (
+                <Row>
+                  {newProducts.map((product) => (
+                    <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
+                      <Product product={product} />
+                    </Col>
+                  ))}
+                </Row>
+              )}
+            </Col>
+          </Row>
+        </Container>
       </>
     </div>
   );
