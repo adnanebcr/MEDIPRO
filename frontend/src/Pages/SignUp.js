@@ -80,33 +80,6 @@ class ClassicFormPage extends React.Component {
       return <Redirect to="/SignIn" />;
     }
   };
-
-  formSubmit = (e) => {
-    e.preventDefault();
-
-    let Data = {
-      name: this.state.name,
-      password: this.state.password,
-      email: this.state.email,
-      adress: this.state.adress,
-      phone: this.state.phone,
-    };
-    console.log(Data);
-    axios
-      .post("/Signup", Data)
-      .then((res) => {
-        this.setState(
-          {
-            sent: true,
-          },
-          this.resetForm()
-        );
-      })
-      .catch(() => {
-        console.log("message non envoyé");
-      });
-  };
-
   //reseting initial data
   resetForm = () => {
     this.setState({
@@ -121,6 +94,31 @@ class ClassicFormPage extends React.Component {
         sent: false,
       });
     }, 3000);
+  };
+
+  formSubmit = (e) => {
+    e.preventDefault();
+
+    let Data = {
+      name: this.state.name,
+      password: this.state.password,
+      email: this.state.email,
+      adress: this.state.adress,
+      phone: this.state.phone,
+    };
+    console.log(Data);
+
+    if (Data.name && Data.password && Data.email && Data.adress && Data.phone) {
+      axios.post("/Signup", Data).then((res) => {
+        this.setState(
+          {
+            sent: true,
+          },
+          this.resetForm()
+        );
+      });
+      this.toggle();
+    }
   };
 
   render() {
@@ -147,6 +145,7 @@ class ClassicFormPage extends React.Component {
                         placeholder=" nom et prénom"
                         value={this.state.name}
                         onChange={this.handleName}
+                        required
                       ></Form.Control>
                     </Form.Group>
                     <Form.Group controlId="password">
@@ -158,6 +157,7 @@ class ClassicFormPage extends React.Component {
                         placeholder=" mot de passe"
                         value={this.state.password}
                         onChange={this.handlePassword}
+                        required
                       ></Form.Control>
                     </Form.Group>
                     <Form.Group controlId="mail">
@@ -169,6 +169,7 @@ class ClassicFormPage extends React.Component {
                         placeholder=" adresse mail"
                         value={this.state.email}
                         onChange={this.handleEmail}
+                        required
                       ></Form.Control>
                     </Form.Group>
                     <Form.Group controlId="adress">
@@ -180,6 +181,7 @@ class ClassicFormPage extends React.Component {
                         placeholder=" adresse postale"
                         value={this.state.adress}
                         onChange={this.handleAdress}
+                        required
                       ></Form.Control>
                     </Form.Group>
                     <Form.Group controlId="phone">
@@ -191,14 +193,11 @@ class ClassicFormPage extends React.Component {
                         placeholder=" téléphone"
                         value={this.state.phone}
                         onChange={this.handlePhone}
+                        required
                       ></Form.Control>
                     </Form.Group>{" "}
                     <div className="text-center">
-                      <Button
-                        variant="primary"
-                        type="submit"
-                        onClick={this.toggle}
-                      >
+                      <Button variant="primary" type="submit">
                         Créer un compte{" "}
                       </Button>
                       <Modal show={this.state.modal} onHide={this.state.modal}>

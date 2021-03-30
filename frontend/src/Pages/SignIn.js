@@ -61,6 +61,7 @@ const SignIn = ({ location, history }) => {
                       placeholder="saisissez votre identifiant"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      required
                     ></Form.Control>
                   </Form.Group>
 
@@ -73,6 +74,7 @@ const SignIn = ({ location, history }) => {
                       placeholder="saisissez votre mot de passe "
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
+                      required
                     ></Form.Control>
                   </Form.Group>
                   <div className="text-center mt-4 black-text">

@@ -82,16 +82,15 @@ export default class Contact extends Component {
       societe: this.state.societe,
       message: this.state.message,
     };
-    axios
-      .post("/Contact", Data)
-      .then((res) => {
+    if (Data.name && Data.email && Data.phone && Data.message) {
+      axios.post("/Contact", Data).then((res) => {
         this.setState({
           sent: true,
         });
-      })
-      .catch(() => {
-        console.log("message non envoyé");
       });
+      this.toggle();
+    }
+
     this.resetForm();
   };
 
@@ -137,6 +136,7 @@ export default class Contact extends Component {
                               value={this.state.name}
                               onChange={this.handleName}
                               className="black-text"
+                              required
                             />
                           </div>
                         </MDBCol>
@@ -150,6 +150,7 @@ export default class Contact extends Component {
                               value={this.state.email}
                               onChange={this.handleEmail}
                               className="black-text"
+                              required
                             />
                           </div>
                         </MDBCol>
@@ -165,6 +166,7 @@ export default class Contact extends Component {
                               value={this.state.phone}
                               onChange={this.handlePhone}
                               className="black-text"
+                              required
                             />
                           </div>
                         </MDBCol>
@@ -193,13 +195,9 @@ export default class Contact extends Component {
                               value={this.state.message}
                               onChange={this.handleMessage}
                               className="black-text"
+                              required
                             />
-                            <MDBBtn
-                              type="submit"
-                              rounded
-                              color="primary"
-                              onClick={this.toggle}
-                            >
+                            <MDBBtn type="submit" rounded color="primary">
                               <MDBIcon icon="paper-plane" className="" />{" "}
                               <span className="">Envoyer</span>
                             </MDBBtn>

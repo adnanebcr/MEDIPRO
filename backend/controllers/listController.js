@@ -7,7 +7,9 @@ import asyncHandler from "express-async-handler";
 // @access Public
 
 const getProductList1 = asyncHandler(async (req, res) => {
-  const list1 = await listProducts.find({ liste: "mediliste1" });
+  const list1 = await listProducts
+    .find({ liste: "mediliste1" })
+    .sort({ designation: 0 });
 
   res.json(list1);
 });
@@ -26,7 +28,9 @@ const getProductListAll = asyncHandler(async (req, res) => {
 // // @access Public
 
 const getProductList2 = asyncHandler(async (req, res) => {
-  const list2 = await listProducts.find({ liste: "mediliste2" });
+  const list2 = await listProducts
+    .find({ liste: "mediliste2" })
+    .sort({ designation: 0 });
 
   res.json(list2);
 });
@@ -36,7 +40,9 @@ const getProductList2 = asyncHandler(async (req, res) => {
 // @access Public
 
 const getProductList3 = asyncHandler(async (req, res) => {
-  const list3 = await listProducts.find({ liste: "teraliste1" });
+  const list3 = await listProducts
+    .find({ liste: "teraliste1" })
+    .sort({ designation: 0 });
 
   res.json(list3);
 });
@@ -46,7 +52,9 @@ const getProductList3 = asyncHandler(async (req, res) => {
 // @access Public
 
 const getProductList4 = asyncHandler(async (req, res) => {
-  const list4 = await listProducts.find({ liste: "teraliste2" });
+  const list4 = await listProducts
+    .find({ liste: "teraliste2" })
+    .sort({ designation: 0 });
 
   res.json(list4);
 });
